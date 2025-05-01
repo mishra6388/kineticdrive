@@ -101,7 +101,7 @@ export default function Footer() {
 
         {/* Copyright section */}
         <div className="border-t border-gray-800 pt-6 mt-6 text-center md:flex md:justify-between md:text-left">
-          <p className="text-gray-400 mb-2 md:mb-0">© {new Date().getFullYear()} Your Brand. All rights reserved.</p>
+          <p className="text-gray-400 mb-2 md:mb-0">© {new Date().getFullYear()} Kineticdrive. All rights reserved.</p>
           <div className="space-x-4">
             <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms of Service</a>
