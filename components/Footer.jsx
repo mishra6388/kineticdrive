@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 export default function Footer() {
@@ -14,18 +17,18 @@ export default function Footer() {
             </h3>
             <p className="text-gray-400 mb-6">Creating exceptional digital experiences that transform businesses and delight users.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Github size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+              </Link>
+              <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Instagram size={20} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -33,14 +36,14 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-lg font-bold mb-4">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2">
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Home</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">About</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Services</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Portfolio</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Blog</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Careers</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">FAQ</a>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Contact</a>
+              <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Home</Link>
+              <Link href="/about" className="text-gray-400 hover:text-amber-400 transition-colors py-1">About</Link>
+              <Link href="/services" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Services</Link>
+              <Link href="/contact" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Contact</Link>
+              <Link href="/portfolio" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Portfolio</Link>
+              <Link href="/blog" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Blog</Link>
+              <Link href="/careers" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Careers</Link>
+              <Link href="/faq" className="text-gray-400 hover:text-amber-400 transition-colors py-1">FAQ</Link>
             </div>
           </div>
 
@@ -52,28 +55,26 @@ export default function Footer() {
                 <Mail className="text-amber-400 mr-3 mt-1 flex-shrink-0" size={18} />
                 <div>
                   <p className="text-gray-300">Email</p>
-                  <a href="mailto:contact@yourbrand.com" className="text-gray-400 hover:text-amber-400 transition-colors">
+                  <a href="mailto:info@kineticdrive.in" className="text-gray-400 hover:text-amber-400 transition-colors">
                     info@kineticdrive.in
                   </a>
                 </div>
               </div>
-              
               <div className="flex items-start">
                 <Phone className="text-amber-400 mr-3 mt-1 flex-shrink-0" size={18} />
                 <div>
                   <p className="text-gray-300">Phone</p>
-                  <a href="tel:+11234567890" className="text-gray-400 hover:text-amber-400 transition-colors">
+                  <a href="tel:+916388922616" className="text-gray-400 hover:text-amber-400 transition-colors">
                     +91 6388922616
                   </a>
                 </div>
               </div>
-              
               <div className="flex items-start">
                 <MapPin className="text-amber-400 mr-3 mt-1 flex-shrink-0" size={18} />
                 <div>
                   <p className="text-gray-300">Address</p>
                   <address className="text-gray-400 not-italic">
-                    Lucknow , Prayagraj<br />
+                    Lucknow, Prayagraj
                   </address>
                 </div>
               </div>
@@ -99,13 +100,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright section */}
+        {/* Copyright */}
         <div className="border-t border-gray-800 pt-6 mt-6 text-center md:flex md:justify-between md:text-left">
           <p className="text-gray-400 mb-2 md:mb-0">© {new Date().getFullYear()} Kineticdrive. All rights reserved.</p>
           <div className="space-x-4">
-            <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Cookie Policy</a>
+            <Link href="/privacy-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms of Service</Link>
+            <Link href="/cookie-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Cookie Policy</Link>
           </div>
         </div>
       </div>
