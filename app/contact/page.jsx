@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [isVisible, setIsVisible] = useState({
@@ -81,24 +82,41 @@ function Contact() {
 
     setSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitting(false);
-      setFormSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
+    emailjs
+      .send(
+        "service_1yvxi98",     // ✅ Replace with your actual service ID
+        "template_wl4ncrg",    // ✅ Replace with your actual template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "qp9AiaEtDpkaPVyR7" // ✅ Replace with your actual public key
+      )
+      .then(
+        () => {
+          setSubmitting(false);
+          setFormSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            company: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
 
-      // Reset form submission status after 5 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 5000);
-    }, 1500);
+          setTimeout(() => {
+            setFormSubmitted(false);
+          }, 5000);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setSubmitting(false);
+          alert("Something went wrong while sending the message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -156,6 +174,21 @@ function Contact() {
                         placeholder="Your name"
                       />
                       {formErrors.name && <p className="mt-2 text-sm text-red-500">{formErrors.name}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Number *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-3 bg-gray-800 border ${
+                          formErrors.phone ? "border-red-500" : "border-gray-700"
+                        } rounded-lg focus:ring-2 focus:ring-amber-400/50 text-white`}
+                        placeholder="Your contact number"
+                      />
+                      {formErrors.phone && <p className="mt-2 text-sm text-red-500">{formErrors.phone}</p>}
                     </div>
 
                     <div>
