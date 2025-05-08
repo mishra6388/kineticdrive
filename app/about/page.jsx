@@ -41,8 +41,8 @@ function About() {
       image: "/api/placeholder/400/400"
     },
     {
-      name: "CTO",
-      role: "Software Engineer",
+      name: "Prashant Mishra",
+      role: "CTO",
       bio: "Prashant Mishra expertise in emerging technologies and leads our development team with a focus on scalable, future-proof architecture.",
       image: "/api/placeholder/400/400"
     },
