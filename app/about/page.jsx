@@ -35,27 +35,27 @@ function About() {
 
   const teamMembers = [
     {
-      name: "Alex Johnson",
+      name: "Garima Kushwaha",
       role: "Founder & CEO",
-      bio: "With over 15 years of software development experience, Alex founded Kinetic Drive to create innovative solutions that empower businesses.",
+      bio: "With over 10 years of software development experience, Alex founded Kinetic Drive to create innovative solutions that empower businesses.",
       image: "/api/placeholder/400/400"
     },
     {
-      name: "Sarah Chen",
-      role: "CTO",
-      bio: "Sarah brings expertise in emerging technologies and leads our development team with a focus on scalable, future-proof architecture.",
+      name: "CTO",
+      role: "Software Engineer",
+      bio: "Prashant Mishra expertise in emerging technologies and leads our development team with a focus on scalable, future-proof architecture.",
       image: "/api/placeholder/400/400"
     },
     {
-      name: "Marcus Williams",
+      name: "Nidhi Mishra",
       role: "Lead Designer",
-      bio: "Marcus creates intuitive user experiences that balance aesthetics with functionality, ensuring our solutions are both beautiful and usable.",
+      bio: "Nidhi intuitive user experiences that balance aesthetics with functionality, ensuring our solutions are both beautiful and usable.",
       image: "/api/placeholder/400/400"
     },
     {
-      name: "Priya Patel",
+      name: "Deeksha Singh",
       role: "Head of Client Success",
-      bio: "Priya works closely with our clients to understand their needs and ensure our solutions exceed expectations at every stage.",
+      bio: "Deeksha closely with our clients to understand their needs and ensure our solutions exceed expectations at every stage.",
       image: "/api/placeholder/400/400"
     }
   ];
