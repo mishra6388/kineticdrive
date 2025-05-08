@@ -37,7 +37,7 @@ function About() {
     {
       name: "Garima Kushwaha",
       role: "Founder & CEO",
-      bio: "With over 10 years of software development experience, Alex founded Kinetic Drive to create innovative solutions that empower businesses.",
+      bio: "With over 10 years of software development experience, Garima Kushwaha founded Kinetic Drive to create innovative solutions that empower businesses.",
       image: "/api/placeholder/400/400"
     },
     {
