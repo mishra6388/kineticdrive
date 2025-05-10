@@ -38,25 +38,25 @@ function About() {
       name: "Garima Kushwaha",
       role: "Founder & CEO",
       bio: "With over 10 years of software development experience, Garima Kushwaha founded Kinetic Drive to create innovative solutions that empower businesses.",
-      image: "/api/placeholder/400/400"
+      image: "/images/garimaKD.jpg"
     },
     {
       name: "Prashant Mishra",
       role: "CTO",
       bio: "Prashant Mishra expertise in emerging technologies and leads our development team with a focus on scalable, future-proof architecture.",
-      image: "/api/placeholder/400/400"
+      image: "/images/prashantKD.png"
     },
     {
       name: "Nidhi Mishra",
       role: "Lead Designer",
       bio: "Nidhi intuitive user experiences that balance aesthetics with functionality, ensuring our solutions are both beautiful and usable.",
-      image: "/api/placeholder/400/400"
+      image: "/images/nidhikd.png"
     },
     {
       name: "Deeksha Singh",
       role: "Head of Client Success",
       bio: "Deeksha closely with our clients to understand their needs and ensure our solutions exceed expectations at every stage.",
-      image: "/api/placeholder/400/400"
+      image: "/images/deekshaKD.png"
     }
   ];
 
@@ -133,7 +133,7 @@ function About() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-amber-300/20 to-amber-500/20 rounded-lg transform rotate-3 blur-lg"></div>
                 <div className="relative bg-gray-800 border border-gray-700 rounded-lg overflow-hidden aspect-video">
                   <img 
-                    src="/api/placeholder/600/400" 
+                    src="/images/aboutHero.png" 
                     alt="Our Mission" 
                     className="w-full h-full object-cover"
                   />
