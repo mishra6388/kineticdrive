@@ -34,11 +34,11 @@ function Hero() {
 
       {/* Intro Line */}
       <p
-        className={`text-sm uppercase tracking-widest text-blue-400 mb-2 transition-opacity duration-1000 ${
+        className={`text-l uppercase tracking-widest mb-1 transition-opacity duration-1000 text-amber-400 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        Crafting Digital Excellence
+        Welcome to KINETICDRIVE PVT.LTD.
       </p>
 
       {/* Main Heading */}
