@@ -27,7 +27,7 @@ function Hero() {
 
   return (
     <div className="relative flex flex-col justify-center items-center h-screen bg-black text-white text-center px-6 overflow-hidden">
-      <Navbar />
+     
 
       {/* Decorative background shape */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-blue-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
