@@ -31,7 +31,8 @@ export const metadata = {
     "Next.js Developer",
     "Tech Solutions",
     "Startup Solutions",
-    "IT Services Allahabad"
+    "IT Services Allahabad",
+    "IT Services Prayagraj",
   ],
 };
 
