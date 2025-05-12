@@ -16,18 +16,32 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Top Web & App Development Company | Custom Solutions",
   description: "KineticDrive is a leading software company specializing in tailored web and mobile app development, UI/UX design, and digital solutions to help your business grow.",
+  keywords: [
+    "KineticDrive",
+    "Web Development",
+    "App Development",
+    "UI/UX Design",
+    "Software Company India",
+    "SEO Services",
+    "Digital Marketing",
+    "Custom Web Applications",
+    "Mobile App Development",
+    "React Developer",
+    "Flutter Developer",
+    "Next.js Developer",
+    "Tech Solutions",
+    "Startup Solutions",
+    "IT Services Allahabad"
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
-        <Navbar/>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
         {children}
-        <Footer/>
-        
+        <Footer />
       </body>
     </html>
   );

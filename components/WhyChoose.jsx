@@ -1,7 +1,7 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { Shield, Clock, Users, Zap, Code, Award } from "lucide-react";
+// import { MacbookScroll } from "./macbook";
 
 const features = [
   {
@@ -86,6 +86,7 @@ export default function Features() {
   return (
     <section id="features-section" className="py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
+        {/* <MacbookScroll/> */}
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
@@ -97,6 +98,7 @@ export default function Features() {
             We combine technical expertise with creative innovation to deliver solutions that exceed expectations.
           </p>
         </div>
+        
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Animated Feature Showcase */}
