@@ -15,7 +15,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="sticky top-0 left-0 w-full flex justify-center z-50">
+    <div className="sticky top-3 left-0 w-full flex justify-center z-50 mt-5">
       <div className="px-4 py-2 w-full max-w-3xl bg-black bg-opacity-80 backdrop-blur-sm rounded-full border border-amber-300/30 shadow-lg shadow-amber-200/10 flex items-center justify-center">
         <ul className="flex space-x-4 sm:space-x-6 items-center flex-wrap justify-center">
           {navLinks.map((link) => {
