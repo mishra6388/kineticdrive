@@ -1,5 +1,6 @@
 "use client";
 
+import OurWork from "@/components/OurWork";
 import React, { useEffect, useState } from "react";
 
 const services = [
@@ -82,6 +83,8 @@ export default function ServicesClient() {
           </div>
         ))}
       </div>
+      <><OurWork/></>
+      
 
       {/* Why Choose Us Section */}
       <section className="mt-28 max-w-6xl mx-auto px-2 text-center">

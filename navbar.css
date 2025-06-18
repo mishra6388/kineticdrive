@@ -1,0 +1,112 @@
+/* navbar.css */
+
+.navbar-container {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 64rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+  transition: all 0.5s ease;
+}
+
+.navbar:hover {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 15px 30px rgba(251, 191, 36, 0.3);
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.nav-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fde68a;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+  transform: scale(1.05) translateY(-2px);
+}
+
+.nav-item.active {
+  color: #fcd34d;
+  background: rgba(251, 191, 36, 0.05);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+  animation: rotateIn 0.4s ease-in-out forwards;
+  transform: rotate(360deg) scale(1.1);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 75%;
+  height: 2px;
+  background: linear-gradient(to right, #fde68a, #fcd34d, #fbbf24);
+  border-radius: 9999px;
+  transform: translateX(-50%);
+  animation: pulseLine 1.5s infinite ease-in-out;
+}
+
+.nav-hover-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(251, 191, 36, 0), rgba(251, 191, 36, 0.05), rgba(251, 191, 36, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 9999px;
+}
+
+.nav-item:hover .nav-hover-bg {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes rotateIn {
+  0% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseLine {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.2);
+    opacity: 1;
+  }
+}
