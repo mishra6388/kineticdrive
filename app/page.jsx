@@ -1,7 +1,9 @@
+import GoogleReview from "@/components/GoogleReview";
 import Hero from "@/components/Hero";
 // import { MacbookScroll } from "@/components/macbook";
 import SeoExpertise from "@/components/Seoexperties";
 import TechStack from "@/components/Techstack";
+import UnderMaintenance from "@/components/UnderMaintenance";
 import WhatweDo from "@/components/WhatweDo"
 import WhyChoose from "@/components/WhyChoose"
 export const metadata = {
@@ -32,8 +34,10 @@ export default function Home() {
     <>
     {/* <MacbookScroll/> */}
      <Hero/>
+     <UnderMaintenance/>
      <WhatweDo/>
      <WhyChoose/>
+     <GoogleReview/>
      <TechStack/>
      <SeoExpertise/>
     </>
