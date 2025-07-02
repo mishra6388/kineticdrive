@@ -10,7 +10,7 @@ const UnderMaintenance = () => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 text-white">
       <div className="relative text-center p-8 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-2xl max-w-md w-full">
         <button
-          className="absolute top-2 right-3 text-gray-400 hover:text-white text-2xl"
+          className="absolute top-2 right-3 text-gray-400 hover:text-white text-2xl cursor-pointer"
           onClick={() => setVisible(false)}
           aria-label="Close"
         >

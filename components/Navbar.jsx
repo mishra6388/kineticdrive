@@ -1,11 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function KineticDriveNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,31 +18,11 @@ export default function KineticDriveNavbar() {
   }, []);
 
   const navigationItems = [
-    { 
-      name: 'Products', 
-      href: '#products',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Web Applications', href: '#web-apps' },
-        { name: 'Mobile Solutions', href: '#mobile' },
-        { name: 'Cloud Services', href: '#cloud' },
-        { name: 'AI Integration', href: '#ai' }
-      ]
-    },
-    { 
-      name: 'Solutions', 
-      href: '#solutions',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Enterprise', href: '#enterprise' },
-        { name: 'Startups', href: '#startups' },
-        { name: 'E-commerce', href: '#ecommerce' },
-        { name: 'Healthcare', href: '#healthcare' }
-      ]
-    },
-    { name: 'Company', href: '#company' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Resources', href: '#resources' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -102,12 +84,12 @@ export default function KineticDriveNavbar() {
             ))}
           </div>
 
-          {/* Desktop CTA Buttons */}
+          {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="text-gray-300 hover:text-white transition-colors duration-200 font-medium">
-              Sign In
-            </button>
-            <button className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105">
+            <button 
+              className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              onClick={() => router.push('/contact')}
+            >
               Get Started
             </button>
           </div>
@@ -140,8 +122,6 @@ export default function KineticDriveNavbar() {
                   >
                     {item.name}
                   </a>
-                  
-                  {/* Mobile Dropdown Items */}
                   {item.hasDropdown && (
                     <div className="ml-4 space-y-1">
                       {item.dropdownItems.map((dropdownItem) => (
@@ -160,17 +140,14 @@ export default function KineticDriveNavbar() {
               ))}
             </div>
 
-            {/* Mobile CTA Buttons */}
+            {/* Mobile CTA Button */}
             <div className="space-y-3 pt-4 border-t border-gray-800">
               <button 
-                className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sign In
-              </button>
-              <button 
-                className="block w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-4 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-4 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 cursor-pointer"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  router.push('/contact');
+                }}
               >
                 Get Started
               </button>
