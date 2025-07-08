@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">Kineticdrive</span>
             </h3>
             <p className="text-gray-400 mb-6">Creating exceptional digital experiences that transform businesses and delight users.</p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Github size={20} />
               </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
               <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Instagram size={20} />
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick links section */}
@@ -40,10 +40,10 @@ export default function Footer() {
               <Link href="/about" className="text-gray-400 hover:text-amber-400 transition-colors py-1">About</Link>
               <Link href="/services" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Services</Link>
               <Link href="/contact" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Contact</Link>
-              <Link href="/portfolio" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Portfolio</Link>
-              <Link href="/blog" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Blog</Link>
-              <Link href="/careers" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Careers</Link>
-              <Link href="/faq" className="text-gray-400 hover:text-amber-400 transition-colors py-1">FAQ</Link>
+              <Link href="/services" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Portfolio</Link>
+              {/* <Link href="/blog" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Blog</Link> */}
+              {/* <Link href="/careers" className="text-gray-400 hover:text-amber-400 transition-colors py-1">Careers</Link> */}
+              {/* <Link href="/faq" className="text-gray-400 hover:text-amber-400 transition-colors py-1">FAQ</Link> */}
             </div>
           </div>
 
