@@ -1,4 +1,7 @@
+'use client';
+
 import React from "react";
+import { useRouter } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 
 const services = [
@@ -30,6 +33,8 @@ const services = [
 ];
 
 const KineticDriveServices = () => {
+  const router = useRouter(); // ✅ Initialize the router
+
   return (
     <div className="min-h-screen w-full bg-black text-white py-16 px-4 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -73,7 +78,10 @@ const KineticDriveServices = () => {
           <p className="text-gray-400 mb-6 text-lg max-w-2xl">
             Partner with Kinetic Drive to turn your ideas into impactful digital products using the most reliable technologies.
           </p>
-          <button className="inline-flex items-center bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition duration-300">
+          <button
+            className="inline-flex items-center bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition duration-300"
+            onClick={() => router.push('/contact')}
+          >
             Contact Us
             <ExternalLink className="w-4 h-4 ml-2" />
           </button>
