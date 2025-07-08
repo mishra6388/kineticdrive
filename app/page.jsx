@@ -34,7 +34,7 @@ export default function Home() {
     <>
     {/* <MacbookScroll/> */}
      <Hero/>
-     <UnderMaintenance/>
+     {/* <UnderMaintenance/> */}
      <WhatweDo/>
      <WhyChoose/>
      <GoogleReview/>
