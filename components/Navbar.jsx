@@ -7,6 +7,7 @@ export default function KineticDriveNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [clickedDropdown, setClickedDropdown] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -17,11 +18,29 @@ export default function KineticDriveNavbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (clickedDropdown && !event.target.closest('.dropdown-container')) {
+        setClickedDropdown(null);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [clickedDropdown]);
+
   const navigationItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    // { name: 'Resources', href: '#resources' },
+    { 
+      name: 'Services', 
+      href: '/services',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Web Development', href: '/web-development' },
+        { name: 'App Development', href: '/app-development' },
+        { name: 'Digital Marketing', href: '/digital-marketing' }
+      ]
+    },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -35,7 +54,7 @@ export default function KineticDriveNavbar() {
         <nav className="flex justify-between items-center h-16 sm:h-20">
           
           {/* Logo */}
-          <div className="flex items-center space-x-2 group cursor-pointer">
+          <div className="flex items-center space-x-2 group cursor-pointer" onClick={() => router.push('/')}>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
             </div>
@@ -50,24 +69,37 @@ export default function KineticDriveNavbar() {
               <div 
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a 
-                  href={item.href}
-                  className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2 group"
-                >
-                  {item.name}
-                  {item.hasDropdown && (
-                    <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
-                  )}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                {item.hasDropdown ? (
+                  <div className="flex items-center">
+                    <a 
+                      href={item.href}
+                      className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2 group"
+                    >
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <button
+                      onClick={() => setClickedDropdown(clickedDropdown === item.name ? null : item.name)}
+                      className="ml-1 p-1 text-gray-300 hover:text-white transition-colors duration-200"
+                    >
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        clickedDropdown === item.name ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                  </div>
+                ) : (
+                  <a 
+                    href={item.href}
+                    className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2 group"
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 group-hover:w-full transition-all duration-300"></span>
+                  </a>
+                )}
 
                 {/* Dropdown Menu */}
-                {item.hasDropdown && activeDropdown === item.name && (
+                {item.hasDropdown && clickedDropdown === item.name && (
                   <div className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-lg border border-gray-800 rounded-xl shadow-2xl shadow-black/50 py-2">
                     {item.dropdownItems.map((dropdownItem) => (
                       <a
@@ -123,7 +155,7 @@ export default function KineticDriveNavbar() {
                     {item.name}
                   </a>
                   {item.hasDropdown && (
-                    <div className="ml-4 space-y-1">
+                    <div className="ml-4 space-y-1 mt-1">
                       {item.dropdownItems.map((dropdownItem) => (
                         <a
                           key={dropdownItem.name}
