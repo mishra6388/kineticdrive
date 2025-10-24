@@ -245,7 +245,7 @@ function MobileAppDevelopment() {
       </section>
 
       {/* Technology Stack */}
-      <section id="app-tech-section" className="py-20 px-6 bg-black">
+      {/* <section id="app-tech-section" className="py-20 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${isVisible.tech ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-bold mb-4">Technology Stack</h2>
@@ -269,10 +269,10 @@ function MobileAppDevelopment() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Platforms Section */}
-      <section className="py-20 px-6 bg-gray-900">
+      {/* <section className="py-20 px-6 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Platforms We Specialize In</h2>
@@ -377,10 +377,10 @@ function MobileAppDevelopment() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-amber-500/10 to-amber-300/10">
+      {/* <section className="py-20 px-6 bg-gradient-to-r from-amber-500/10 to-amber-300/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Launch Your Mobile App?</h2>
           <p className="text-gray-300 text-lg mb-8">
@@ -395,7 +395,7 @@ function MobileAppDevelopment() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
