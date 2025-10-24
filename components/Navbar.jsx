@@ -54,9 +54,15 @@ export default function KineticDriveNavbar() {
         <nav className="flex justify-between items-center h-16 sm:h-20">
           
           {/* Logo */}
+       {/* Logo */}
+       {/* Logo */}
           <div className="flex items-center space-x-2 group cursor-pointer" onClick={() => router.push('/')}>
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg p-1 group-hover:scale-110 transition-transform duration-300">
+              <img 
+                src="/logo.png" 
+                alt="kineticDrive Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl sm:text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
               kineticDrive
