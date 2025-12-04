@@ -32,16 +32,16 @@ export default function ContactAndLocations() {
         'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.085438634438!2d81.0010055!3d26.7958814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be51cf4486c1b%3A0xc6609494650345ef!2sLucknow!5e0!3m2!1sen!2sin!4v1715855072056!5m2!1sen!2sin',
       mapsUrl: 'https://www.google.co.in/maps/place/Lucknow,+Uttar+Pradesh/@26.7958814,81.0010055,17z',
     },
-    {
-      name: 'Haridwar Branch',
-      address: 'Uttarakhand W3HR+3Q5 Haridwar, Uttarakhand',
-      phone: '+91 9355520030',
-      email: 'info@kineticdrive.in',
-      hours: 'Mon-Sat: 10AM-6PM',
-      embedUrl:
-        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.2247803608716!2d78.0894203!3d29.9276314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU1JzM5LjUiTiA3OMKwMDUnMzEuMiJF!5e0!3m2!1sen!2sin!4v1715855178590!5m2!1sen!2sin',
-      mapsUrl: 'https://www.google.com/maps/place/29%C2%B055\'39.5%22N+78%C2%B005\'31.2%22E/@29.9276314,78.0894203,17z',
-    },
+    // {
+    //   name: 'Haridwar Branch',
+    //   address: 'Uttarakhand W3HR+3Q5 Haridwar, Uttarakhand',
+    //   phone: '+91 9355520030',
+    //   email: 'info@kineticdrive.in',
+    //   hours: 'Mon-Sat: 10AM-6PM',
+    //   embedUrl:
+    //     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.2247803608716!2d78.0894203!3d29.9276314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDU1JzM5LjUiTiA3OMKwMDUnMzEuMiJF!5e0!3m2!1sen!2sin!4v1715855178590!5m2!1sen!2sin',
+    //   mapsUrl: 'https://www.google.com/maps/place/29%C2%B055\'39.5%22N+78%C2%B005\'31.2%22E/@29.9276314,78.0894203,17z',
+    // },
   ];
 
   const handleInputChange = (e) => {
