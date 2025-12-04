@@ -6,6 +6,7 @@ import TechStack from "@/components/Techstack";
 import UnderMaintenance from "@/components/UnderMaintenance";
 import WhatweDo from "@/components/WhatweDo"
 import WhyChoose from "@/components/WhyChoose"
+import Contact from "@/components/Contact";
 export const metadata = {
   title: "Kinetic Drive | Digital Marketing, App & Web Development",
   description: "Boost your business with Kinetic Drive — your trusted partner in SEO, web development, app development, and digital marketing solutions.",
@@ -40,6 +41,7 @@ export default function Home() {
      <GoogleReview/>
      <TechStack/>
      <SeoExpertise/>
+     <Contact/>
     </>
     
     

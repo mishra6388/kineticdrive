@@ -69,7 +69,7 @@ export default function Footer() {
                   </a>
                 </div>
               </div>
-              <div className="flex items-start">
+              {/* <div className="flex items-start">
                 <MapPin className="text-amber-400 mr-3 mt-1 flex-shrink-0" size={18} />
                 <div>
                   <p className="text-gray-300">Address</p>
@@ -77,7 +77,7 @@ export default function Footer() {
                     Lucknow, Prayagraj
                   </address>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
