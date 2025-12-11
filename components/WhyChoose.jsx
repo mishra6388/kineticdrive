@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Shield, Clock, Users, Zap, Code, Award } from "lucide-react";
-// import { MacbookScroll } from "./macbook";
 
 const features = [
   {
@@ -88,9 +87,8 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         {/* <MacbookScroll/> */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl font-bold text-white mb-4">Why Choose Us</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-amber-300 to-amber-500 mx-auto mb-6 rounded-full"></div>
@@ -98,23 +96,21 @@ export default function Features() {
             We combine technical expertise with creative innovation to deliver solutions that exceed expectations.
           </p>
         </div>
-        
+
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Animated Feature Showcase */}
           <div
-            className={`relative h-96 border border-gray-800 rounded-lg overflow-hidden bg-black transition-all duration-1000 ${
-              isVisible ? "opacity-100 transform-none" : "opacity-0 -translate-x-10"
-            }`}
+            className={`relative h-96 border border-gray-800 rounded-lg overflow-hidden bg-black transition-all duration-1000 ${isVisible ? "opacity-100 transform-none" : "opacity-0 -translate-x-10"
+              }`}
           >
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 flex flex-col justify-center items-center text-center p-10 transition-all duration-500 ${
-                  activeFeature === index
+                className={`absolute inset-0 flex flex-col justify-center items-center text-center p-10 transition-all duration-500 ${activeFeature === index
                     ? "opacity-100 transform-none"
                     : "opacity-0 translate-y-5 pointer-events-none"
-                }`}
+                  }`}
               >
                 <div className="bg-gradient-to-br from-amber-300 to-amber-600 p-4 rounded-full text-black mb-6">
                   {feature.icon}
@@ -129,9 +125,8 @@ export default function Features() {
               {features.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    activeFeature === index ? "bg-amber-400 w-6" : "bg-gray-600"
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${activeFeature === index ? "bg-amber-400 w-6" : "bg-gray-600"
+                    }`}
                   onClick={() => setActiveFeature(index)}
                   aria-label={`View feature ${index + 1}`}
                 />
@@ -144,14 +139,16 @@ export default function Features() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`bg-gray-800 border border-gray-700 p-6 rounded-lg transition-all duration-1000 hover:border-amber-300/30 ${
+                className={`bg-gray-800 border border-gray-700 p-6 rounded-lg hover:border-amber-300/30 transition-colors transition-all duration-1000 ${
                   isVisible ? "opacity-100 transform-none" : "opacity-0 translate-x-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
                 onMouseEnter={() => setActiveFeature(index)}
               >
                 <div className="flex items-start">
-                  <div className="text-amber-400 mr-4 mt-1">{feature.icon}</div>
+                  <div className="text-amber-400 mr-4 mt-1">
+                    {feature.icon}
+                  </div>
                   <div>
                     <h3 className="text-lg font-medium text-white mb-2">{feature.title}</h3>
                     <p className="text-gray-400 text-sm">{feature.description}</p>

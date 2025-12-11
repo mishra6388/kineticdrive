@@ -48,13 +48,38 @@ const KineticDriveServices = () => {
           </p>
         </div>
 
+        {/* Tech Stack Showcase - SEO Friendly */}
+        <div className="flex flex-col items-center my-16 space-y-8">
+          <div className="text-center space-y-4">
+            <h3 className="text-2xl font-semibold text-white">Our Technology Stack</h3>
+            <p className="text-gray-400 max-w-2xl">We leverage cutting-edge technologies to deliver high-performance, scalable solutions</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { name: 'React', color: '#61DAFB' },
+              { name: 'Next.js', color: '#ffffff' },
+              { name: 'Flutter', color: '#02569B' },
+              { name: 'Node.js', color: '#339933' },
+              { name: 'WordPress', color: '#21759B' },
+              { name: 'AppSheet', color: '#fbbf24' }
+            ].map((tech) => (
+              <div key={tech.name} className="flex flex-col items-center space-y-2 p-4 rounded-lg hover:bg-gray-900/50 transition-colors">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center border-2 border-opacity-30"
+                  style={{ borderColor: tech.color, backgroundColor: tech.color + '20' }}
+                >
+                  <span className="text-sm font-bold text-white">{tech.name[0]}</span>
+                </div>
+                <span className="text-sm font-medium text-gray-300">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, idx) => (
-            <div
-              key={idx}
-              className="group bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6 rounded-3xl hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-yellow-500/30"
-            >
+            <div key={idx} className="group bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-6 rounded-3xl hover:border-amber-300/50 transform transition-all duration-300 shadow-lg hover:shadow-yellow-500/30">
               <div className="mb-4">
                 <img
                   src={service.logoUrl}
@@ -71,7 +96,7 @@ const KineticDriveServices = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-lg border border-gray-800/50 rounded-3xl p-10 shadow-xl">
+        < div className="bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-lg border border-gray-800/50 rounded-3xl p-10 shadow-xl" >
           <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Let’s Build Something Extraordinary Together
           </h3>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function KineticDriveHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,33 +14,31 @@ export default function KineticDriveHero() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-amber-500/20 to-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-yellow-400/15 to-amber-500/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-yellow-400/15 to-amber-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" 
-           style={{
-             backgroundImage: `
+      <div className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
                linear-gradient(rgba(255, 193, 7, 1) 1px, transparent 1px),
                linear-gradient(90deg, rgba(255, 193, 7, 1) 1px, transparent 1px)
              `,
-             backgroundSize: '40px 40px'
-           }}>
+          backgroundSize: '40px 40px'
+        }}>
       </div>
-
-
 
       {/* Main Hero Content */}
       <main className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-5xl mx-auto">
-            
+
             {/* Badge */}
             <div className={`inline-flex items-center bg-gradient-to-r from-yellow-400/10 to-amber-500/10 border border-yellow-400/20 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
               <span className="text-yellow-400 text-xs sm:text-sm font-medium">Powering Innovation</span>
             </div>
-            
+
             {/* Main Headline */}
             <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               <span className="block">Build the future with</span>
@@ -51,7 +49,7 @@ export default function KineticDriveHero() {
                 Tech Solutions
               </span>
             </h1>
-            
+
             {/* Subheadline */}
             <p className={`text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
               Empowering businesses worldwide with cutting-edge technology solutions that drive innovation, accelerate growth, and transform digital experiences.
