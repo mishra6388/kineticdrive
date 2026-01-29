@@ -22,7 +22,7 @@ export const metadata = {
     title: "Services | Kinetic Drive",
     description:
       "Empowering your business with expert digital services – including SEO, development, design, and marketing at Kinetic Drive.",
-    url: "https://shinywagon.in/services",
+    url: "https://kineticdrive.in/services",
     siteName: "Kinetic Drive",
     type: "website",
   },
