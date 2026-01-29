@@ -31,9 +31,9 @@ const projects = [
   },
   {
     id: 4,
-    businessName: "Shiny Wagon",
+    businessName: "Shiny Vagon",
     category: "Car Wash Service",
-    url: "https://shinywagon.in",
+    url: "https://shinyvagon.in",
     image: "/website/shinywagon.jpeg",
     description: "Professional car wash and detailing services at your doorstep"
   },
