@@ -13,6 +13,8 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "@react-three/postprocessing": "^3.0.4",
+    "@supabase/auth-helpers-nextjs": "^0.15.0",
+    "@supabase/supabase-js": "^2.95.3",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.9.2",

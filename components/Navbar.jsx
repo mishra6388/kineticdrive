@@ -30,9 +30,10 @@ export default function KineticDriveNavbar() {
 
   const navigationItems = [
     { name: 'Home', href: '/' },
+    { name: 'Anchors', href: '/anchors' },
     { name: 'About', href: '/about' },
-    { 
-      name: 'Services', 
+    {
+      name: 'Services',
       href: '/services',
       hasDropdown: true,
       dropdownItems: [
@@ -45,22 +46,21 @@ export default function KineticDriveNavbar() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-black/90 backdrop-blur-lg border-b border-gray-800/50' 
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-black/90 backdrop-blur-lg border-b border-gray-800/50'
         : 'bg-transparent'
-    }`}>
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center h-16 sm:h-20">
-          
+
           {/* Logo */}
-       {/* Logo */}
-       {/* Logo */}
+          {/* Logo */}
+          {/* Logo */}
           <div className="flex items-center space-x-2 group cursor-pointer" onClick={() => router.push('/')}>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg p-1 group-hover:scale-110 transition-transform duration-300">
-              <img 
-                src="/logo.png" 
-                alt="kineticDrive Logo" 
+              <img
+                src="/logo.png"
+                alt="kineticDrive Logo"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -72,13 +72,13 @@ export default function KineticDriveNavbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <div 
+              <div
                 key={item.name}
                 className="relative"
               >
                 {item.hasDropdown ? (
                   <div className="flex items-center">
-                    <a 
+                    <a
                       href={item.href}
                       className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2 group"
                     >
@@ -89,13 +89,12 @@ export default function KineticDriveNavbar() {
                       onClick={() => setClickedDropdown(clickedDropdown === item.name ? null : item.name)}
                       className="ml-1 p-1 text-gray-300 hover:text-white transition-colors duration-200"
                     >
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                        clickedDropdown === item.name ? 'rotate-180' : ''
-                      }`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${clickedDropdown === item.name ? 'rotate-180' : ''
+                        }`} />
                     </button>
                   </div>
                 ) : (
-                  <a 
+                  <a
                     href={item.href}
                     className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2 group"
                   >
@@ -124,7 +123,7 @@ export default function KineticDriveNavbar() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button 
+            <button
               className="bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 cursor-pointer"
               onClick={() => router.push('/contact')}
             >
@@ -133,7 +132,7 @@ export default function KineticDriveNavbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden text-white p-2 hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
           >
@@ -142,18 +141,17 @@ export default function KineticDriveNavbar() {
         </nav>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen 
-            ? 'max-h-screen opacity-100 pb-6' 
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${mobileMenuOpen
+            ? 'max-h-screen opacity-100 pb-6'
             : 'max-h-0 opacity-0'
-        }`}>
+          }`}>
           <div className="bg-gray-900/50 backdrop-blur-lg rounded-xl mt-4 p-4 border border-gray-800">
-            
+
             {/* Mobile Navigation Items */}
             <div className="space-y-1 mb-6">
               {navigationItems.map((item) => (
                 <div key={item.name}>
-                  <a 
+                  <a
                     href={item.href}
                     className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
                     onClick={() => setMobileMenuOpen(false)}
@@ -180,7 +178,7 @@ export default function KineticDriveNavbar() {
 
             {/* Mobile CTA Button */}
             <div className="space-y-3 pt-4 border-t border-gray-800">
-              <button 
+              <button
                 className="block w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-4 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 cursor-pointer"
                 onClick={() => {
                   setMobileMenuOpen(false);

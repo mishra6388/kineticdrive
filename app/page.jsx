@@ -7,6 +7,7 @@ import UnderMaintenance from "@/components/UnderMaintenance";
 import WhatweDo from "@/components/WhatweDo"
 import WhyChoose from "@/components/WhyChoose"
 import Contact from "@/components/Contact";
+import TestSupabase from "@/components/TestSupabase";
 export const metadata = {
   title: "Kinetic Drive | Digital Marketing, App & Web Development",
   description: "Boost your business with Kinetic Drive — your trusted partner in SEO, web development, app development, and digital marketing solutions.",
@@ -33,17 +34,18 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-    {/* <MacbookScroll/> */}
-     <Hero/>
-     {/* <UnderMaintenance/> */}
-     <WhatweDo/>
-     <WhyChoose/>
-     <GoogleReview/>
-     <TechStack/>
-     <SeoExpertise/>
-     <Contact/>
+      {/* <MacbookScroll/> */}
+      <Hero />
+      {/* <TestSupabase/> */}
+      {/* <UnderMaintenance/> */}
+      <WhatweDo />
+      <WhyChoose />
+      <GoogleReview />
+      <TechStack />
+      <SeoExpertise />
+      <Contact />
     </>
-    
-    
+
+
   );
 }

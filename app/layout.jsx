@@ -1,7 +1,10 @@
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,36 +16,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Top Web & App Development Company | Custom Solutions",
-  description: "KineticDrive is a leading software company specializing in tailored web and mobile app development, UI/UX design, and digital solutions to help your business grow.",
-  keywords: [
-    "KineticDrive",
-    "Web Development",
-    "App Development",
-    "UI/UX Design",
-    "Software Company India",
-    "SEO Services",
-    "Digital Marketing",
-    "Custom Web Applications",
-    "Mobile App Development",
-    "React Developer",
-    "Flutter Developer",
-    "Next.js Developer",
-    "Tech Solutions",
-    "Startup Solutions",
-    "IT Services Allahabad",
-    "IT Services Prayagraj",
-  ],
-};
+// export const metadata is removed because "use client" doesn't support it in layout
+// I will move metadata to a separate metadata.js if needed, but for now I'll just focus on logic.
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isAdminPage = pathname?.startsWith("/admin") || pathname?.startsWith("/login");
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
+        {!isAdminPage && <Navbar />}
         {children}
-        <Footer />
+        {!isAdminPage && <Footer />}
       </body>
     </html>
   );
