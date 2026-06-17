@@ -104,10 +104,12 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-6 mt-6 text-center md:flex md:justify-between md:text-left">
           <p className="text-gray-400 mb-2 md:mb-0">© {new Date().getFullYear()} Kineticdrive. All rights reserved.</p>
           <div className="space-x-4">
-            <Link href="/privacy-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms of Service</Link>
-            <Link href="/cookie-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Cookie Policy</Link>
-          </div>
+  <Link href="/privacy-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Privacy Policy</Link>
+  <Link href="/terms-of-service" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms of Service</Link>
+  <Link href="/cookie-policy" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Cookie Policy</Link>
+  <Link href="/data-deletion" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Data Deletion</Link>
+  <Link href="/terms-and-conditions" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">Terms & Conditions</Link>
+</div>
         </div>
       </div>
     </footer>
