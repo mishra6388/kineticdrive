@@ -1,69 +1,74 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base:      #050508;
+  --bg-surface:   #0F0F18;
+  --bg-card:      #13131F;
+  --border:       rgba(255,255,255,0.07);
+  --accent:       #F59E0B;
+  --accent-light: #FBBF24;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-muted:   #6B7280;
+  --radius-card:  1rem;
+  --section-py:   5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ──────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: black;
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Geist Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d2d3a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
 
+/* ─── Utility: hide scrollbar but keep scroll ───────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
+/* ─── Utility: section heading gradient ─────────────────────── */
+.gradient-text {
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-
-/* colors we are using
-
-Primary Colors
-
-Background Base: bg-black (Pure black, #000000)
-Background Gradient End: bg-gray-900 (Very dark gray, #111827)
-Card Background: bg-gray-800 (Dark gray, #1F2937)
-Border Accent: border-gray-700 (Medium-dark gray, #374151)
-
-Accent Colors
-
-Primary Accent: amber-300 to amber-500 gradient
-
-Light amber: #FCD34D (amber-300)
-Medium amber: #F59E0B (amber-500)
-
-
-Secondary Accent: text-blue-400 (Medium blue, #60A5FA)
-
-Text Colors
-
-Primary Text: text-white (White, #FFFFFF)
-Secondary Text: text-gray-300 (Light gray, #D1D5DB)
-Tertiary Text: text-gray-400 (Medium gray, #9CA3AF)
-Accent Text: text-amber-400 (Amber, #FBBF24)
-
-Transparency/Opacity Values
-
-Navbar Border: border-amber-300/30 (30% opacity)
-Card Hover Border: border-amber-300/50 (50% opacity)
-Shadow Glow: shadow-amber-300/10 (10% opacity)
-Navbar Background: bg-black bg-opacity-80 (80% opacity)
-
-Gradients
-
-Section Background: bg-gradient-to-b from-black to-gray-900
-Accent Underline: bg-gradient-to-r from-amber-300 to-amber-500
-Navbar Active Indicator: bg-gradient-to-r from-amber-200 to-amber-400 */
+/* ─── Colour reference (kept for devs) ─────────────────────────
+  Background Base:    #050508  (bg-base)
+  Background Surface: #0F0F18  (bg-surface)
+  Card Background:    #13131F  (bg-card)
+  Border:             rgba(255,255,255,0.07)
+  Primary Accent:     #F59E0B / #FBBF24 (amber)
+  Text Primary:       #FFFFFF
+  Text Secondary:     #9CA3AF
+  Text Muted:         #6B7280
+──────────────────────────────────────────────────────────────── */

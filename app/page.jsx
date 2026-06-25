@@ -1,16 +1,21 @@
-import GoogleReview from "@/components/GoogleReview";
+// app/page.jsx
+
+import SeoHead from "@/components/SeoHead";
 import Hero from "@/components/Hero";
-// import { MacbookScroll } from "@/components/macbook";
+import LeadCaptureSection from "@/components/LeadCaptureSection";
+import WhatweDo from "@/components/WhatweDo";
+import IndustrygrowthSection from "@/components/IndustrygrowthSection";
+import WhyChoose from "@/components/WhyChoose";
+import DigitalMarketingServices from "@/components/DigitalMarketingServices";
+import GoogleReview from "@/components/GoogleReview";
+import TechStack from "@/components/TechStack";
 import SeoExpertise from "@/components/Seoexperties";
-import TechStack from "@/components/Techstack";
-import UnderMaintenance from "@/components/UnderMaintenance";
-import WhatweDo from "@/components/WhatweDo"
-import WhyChoose from "@/components/WhyChoose"
 import Contact from "@/components/Contact";
-import TestSupabase from "@/components/TestSupabase";
+
 export const metadata = {
   title: "Kinetic Drive | Digital Marketing, App & Web Development",
-  description: "Boost your business with Kinetic Drive — your trusted partner in SEO, web development, app development, and digital marketing solutions.",
+  description:
+    "Boost your business with Kinetic Drive — your trusted partner in SEO, web development, app development, and digital marketing solutions.",
   keywords: [
     "Kineticdrive",
     "Digital Marketing",
@@ -26,25 +31,35 @@ export const metadata = {
     "Online Branding",
     "Software Company Allahabad",
     "Full Stack Development",
-    "Marketing Agency"
+    "Marketing Agency",
   ],
 };
 
 export default function Home() {
   return (
     <>
+      {/* SEO meta tags */}
+      <SeoHead
+        title="Kinetic Drive – Digital Marketing & Web Development"
+        description="Boost your business with Kinetic Drive — SEO, web, app development, and digital marketing solutions."
+      />
+
+      {/* Main sections */}
       {/* <MacbookScroll/> */}
       <Hero />
-      {/* <TestSupabase/> */}
-      {/* <UnderMaintenance/> */}
+      <LeadCaptureSection />
       <WhatweDo />
+      <IndustrygrowthSection />
       <WhyChoose />
+
+      {/* Digital Marketing Services Grid */}
+      <DigitalMarketingServices />
+
+      {/* Footer sections */}
       <GoogleReview />
       <TechStack />
       <SeoExpertise />
       <Contact />
     </>
-
-
   );
 }

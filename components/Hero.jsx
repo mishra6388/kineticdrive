@@ -1,103 +1,135 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
+
+const STATS = [
+  { value: '500+', label: 'Projects delivered' },
+  { value: '99.9%', label: 'Client satisfaction' },
+  { value: '24/7', label: 'Dedicated support' },
+];
+
+const TAGS = ['Website Development', 'SEO & Growth', 'Brand Marketing', 'Mobile Apps'];
 
 export default function KineticDriveHero() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { setVisible(true); }, []);
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-amber-500/20 to-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-yellow-400/15 to-amber-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
+    <section className="relative min-h-screen overflow-hidden bg-[#050508]">
 
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]"
+      {/* Background image with overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `
-               linear-gradient(rgba(255, 193, 7, 1) 1px, transparent 1px),
-               linear-gradient(90deg, rgba(255, 193, 7, 1) 1px, transparent 1px)
-             `,
-          backgroundSize: '40px 40px'
-        }}>
-      </div>
+          backgroundImage:
+            "linear-gradient(to right, rgba(5,5,8,0.92), rgba(5,5,8,0.75), rgba(5,5,8,0.55)), url('/Hero.png')",
+        }}
+      />
 
-      {/* Main Hero Content */}
-      <main className="relative z-10 px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-5xl mx-auto">
+      {/* Radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.10),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.07),transparent_14%)]" />
 
-            {/* Badge */}
-            <div className={`inline-flex items-center bg-gradient-to-r from-yellow-400/10 to-amber-500/10 border border-yellow-400/20 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
-              <span className="text-yellow-400 text-xs sm:text-sm font-medium">Powering Innovation</span>
-            </div>
+      {/* Subtle grid */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(251,191,36,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(251,191,36,0.07) 1px,transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
 
-            {/* Main Headline */}
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              <span className="block">Build the future with</span>
-              <span className="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 bg-clip-text text-transparent">
-                KineticDrive
+      {/* Accent glow blobs */}
+      <div className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-500/10 blur-3xl sm:h-96 sm:w-96" />
+      <div className="pointer-events-none absolute -left-16 top-1/3 h-64 w-64 rounded-full bg-yellow-400/5 blur-3xl" />
+
+      {/* ── Content ── */}
+      <main className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex min-h-screen flex-col items-center justify-center pb-24 pt-28 text-center lg:items-start lg:text-left lg:pt-36">
+
+          {/* Eyebrow pill */}
+          <div
+            className={`inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/5 px-4 py-2 backdrop-blur-sm transition-all duration-1000 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+          >
+            <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-sm font-medium text-amber-200">India's Digital Growth Partner</span>
+          </div>
+
+          {/* Headline */}
+          <h1
+            className={`mt-6 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl transition-all duration-1000 delay-200 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+          >
+            <span className="block">Digital solutions</span>
+            <span className="mt-2 block bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+              built for India's next growth wave.
+            </span>
+          </h1>
+
+          {/* Sub-copy */}
+          <p
+            className={`mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg transition-all duration-1000 delay-400 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+          >
+            We help Indian startups, SMEs, and growing brands build powerful websites, mobile apps, and
+            digital marketing systems that turn attention into real business results.
+          </p>
+
+          {/* CTA buttons */}
+          <div
+            className={`mt-10 flex flex-col gap-3 sm:flex-row transition-all duration-1000 delay-600 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+          >
+            <a
+              href="#contact"
+              className="group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-500 px-8 py-4 text-base font-semibold text-slate-950 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/25"
+            >
+              Talk to Our Experts
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#portfolio"
+              className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-amber-400/40 hover:bg-amber-400/5"
+            >
+              <Play className="mr-2 h-4 w-4 text-amber-300" />
+              Explore Our Work
+            </a>
+          </div>
+
+          {/* Tag pills */}
+          <div
+            className={`mt-8 flex flex-wrap justify-center gap-2 lg:justify-start transition-all duration-1000 delay-800 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+          >
+            {TAGS.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-slate-300"
+              >
+                {tag}
               </span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-gray-400 mt-2">
-                Tech Solutions
-              </span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className={`text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              Empowering businesses worldwide with cutting-edge technology solutions that drive innovation, accelerate growth, and transform digital experiences.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20 px-4 sm:px-0 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-              <button className="group w-full sm:w-auto bg-gradient-to-r from-yellow-400 to-amber-500 text-black px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:shadow-yellow-400/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-                Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </main>
 
-      {/* Bottom Stats Section */}
-      <div className="relative z-10 mt-16 sm:mt-24 px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-        <div className="max-w-7xl mx-auto">
-          <div className={`grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 text-center border-t border-gray-800 pt-12 sm:pt-16 transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <div className="group">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                500+
-              </div>
-              <div className="text-gray-400 text-sm sm:text-base">Enterprise Clients</div>
+      {/* Stats strip */}
+      <div className="relative z-10 border-t border-white/5 bg-black/30 backdrop-blur-sm">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 divide-y divide-white/5 px-6 py-8 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:text-left lg:px-8">
+          {STATS.map((s) => (
+            <div key={s.label} className="py-4 text-center sm:px-8 sm:py-0 first:pl-0">
+              <p className="text-3xl font-bold text-amber-300">{s.value}</p>
+              <p className="mt-1 text-sm text-slate-400">{s.label}</p>
             </div>
-            <div className="group">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                99.9%
-              </div>
-              <div className="text-gray-400 text-sm sm:text-base">Uptime Guarantee</div>
-            </div>
-            <div className="group">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                24/7
-              </div>
-              <div className="text-gray-400 text-sm sm:text-base">Global Support</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="w-6 h-10 border-2 border-gray-600 rounded-full mx-auto relative">
-          <div className="w-1 h-3 bg-yellow-400 rounded-full mx-auto mt-2 animate-bounce"></div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 }

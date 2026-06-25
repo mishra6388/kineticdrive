@@ -1,206 +1,198 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, BarChart2, Globe, TrendingUp, Target, Award } from 'lucide-react';
 
-function SeoExpertise() {
-  const [isVisible, setIsVisible] = useState(false);
+const seoServices = [
+  {
+    title: "Keyword Research & Strategy",
+    icon: Search,
+    description: "We identify high-value keywords your target audience is actively searching for, then build a comprehensive strategy to rank for those terms.",
+    stats: [{ value: "500+", label: "Keywords Analyzed" }, { value: "85%", label: "Success Rate" }],
+  },
+  {
+    title: "On-Page Optimization",
+    icon: Globe,
+    description: "We optimize your content, meta tags, headers, and site structure so search engines can easily crawl and understand your website.",
+    stats: [{ value: "40%", label: "Avg. Visibility Increase" }, { value: "3×", label: "Faster Indexing" }],
+  },
+  {
+    title: "Technical SEO",
+    icon: BarChart2,
+    description: "We resolve technical issues that impact search visibility — site speed, mobile-friendliness, structured data, and crawl errors.",
+    stats: [{ value: "99%", label: "Mobile Optimization" }, { value: "2.5s", label: "Avg. Load Time" }],
+  },
+  {
+    title: "Content Optimization",
+    icon: TrendingUp,
+    description: "We create and optimize high-quality, relevant content that satisfies user intent and establishes your site as an authority.",
+    stats: [{ value: "65%", label: "More Engagement" }, { value: "4×", label: "Higher CTR" }],
+  },
+  {
+    title: "Competitor Analysis",
+    icon: Target,
+    description: "We analyze your competitors' strategies to identify opportunities and develop tactics to outperform them in search results.",
+    stats: [{ value: "Top 10", label: "Competitor Insights" }, { value: "2×", label: "Growth Strategy" }],
+  },
+  {
+    title: "Performance Tracking",
+    icon: Award,
+    description: "We continuously monitor your SEO performance with comprehensive analytics and reporting to refine strategies and maximise results.",
+    stats: [{ value: "24/7", label: "Rank Monitoring" }, { value: "Monthly", label: "Detailed Reports" }],
+  },
+];
+
+const resultCards = [
+  { value: "90%", label: "Higher Organic Traffic" },
+  { value: "70%", label: "Lower Acquisition Cost" },
+  { value: "45%", label: "Conversion Increase" },
+];
+
+export default function SeoExpertise() {
+  const [visible, setVisible] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const sectionRef = useRef(null);
 
-  const seoServices = [
-    {
-      title: "Keyword Research & Strategy",
-      icon: Search, // Store the component, not JSX
-      description: "We identify high-value keywords that your target audience is actively searching for, then build a comprehensive strategy to rank for those terms.",
-      stats: [
-        { value: "500+", label: "Keywords Analyzed" },
-        { value: "85%", label: "Success Rate" }
-      ]
-    },
-    {
-      title: "On-Page Optimization",
-      icon: Globe, // Store the component, not JSX
-      description: "We optimize your content, meta tags, headers, and site structure to ensure search engines can easily crawl and understand your website.",
-      stats: [
-        { value: "40%", label: "Avg. Visibility Increase" },
-        { value: "3x", label: "Faster Indexing" }
-      ]
-    },
-    {
-      title: "Technical SEO",
-      icon: BarChart2, // Store the component, not JSX
-      description: "We resolve technical issues that impact search visibility, like site speed, mobile-friendliness, structured data, and crawl errors.",
-      stats: [
-        { value: "99%", label: "Mobile Optimization" },
-        { value: "2.5s", label: "Avg. Load Time" }
-      ]
-    },
-    {
-      title: "Content Optimization",
-      icon: TrendingUp, // Store the component, not JSX
-      description: "We create and optimize high-quality, relevant content that satisfies user intent and establishes your site as an authority.",
-      stats: [
-        { value: "65%", label: "More Engagement" },
-        { value: "4x", label: "Higher CTR" }
-      ]
-    },
-    {
-      title: "Competitor Analysis",
-      icon: Target, // Store the component, not JSX
-      description: "We analyze your competitors' strategies to identify opportunities and develop tactics to outperform them in search results.",
-      stats: [
-        { value: "Top 10", label: "Competitor Insights" },
-        { value: "2x", label: "Growth Strategy" }
-      ]
-    },
-    {
-      title: "Performance Tracking",
-      icon: Award, // Store the component, not JSX
-      description: "We continuously monitor your SEO performance with comprehensive analytics and reporting to refine strategies and maximize results.",
-      stats: [
-        { value: "24/7", label: "Rank Monitoring" },
-        { value: "Monthly", label: "Detailed Reports" }
-      ]
-    }
-  ];
-
+  /* IntersectionObserver scroll-reveal */
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('seo-section');
-      if (!element) return;
-
-      const position = element.getBoundingClientRect();
-      if (position.top < window.innerHeight - 100) {
-        setIsVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on initial load
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
+  /* Auto-cycle tabs */
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prev) => (prev + 1) % seoServices.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [seoServices.length]);
+    const id = setInterval(() => setActiveTab((p) => (p + 1) % seoServices.length), 4000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
-    <section id="seo-section" className="py-24 px-6 bg-gradient-to-b from-gray-900 to-black">
-      <div className="max-w-6xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex items-center bg-amber-900/30 px-4 py-2 rounded-full mb-4">
-            <Search size={18} className="text-amber-400 mr-2" />
-            <span className="text-amber-300 text-sm font-medium">SEO Expertise</span>
+    <section
+      ref={sectionRef}
+      id="seo-section"
+      className="relative overflow-hidden bg-[#050508] px-4 py-20 sm:px-6 sm:py-28 lg:px-8"
+    >
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute -top-20 right-0 h-80 w-80 rounded-full bg-amber-500/6 blur-3xl" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+
+      <div className="relative mx-auto max-w-7xl">
+
+        {/* Header */}
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/8 px-4 py-1.5 mb-4">
+            <Search size={14} className="text-amber-400" />
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-400">SEO Expertise</span>
           </div>
-          <h2 className="text-3xl font-bold text-white mb-4">Search Engine Optimization That Drives Results</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-300 to-amber-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Search Engine Optimization{' '}
+            <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
+              That Drives Results
+            </span>
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg">
             Our proven SEO strategies drive organic traffic, increase conversion rates, and grow your business with sustainable results.
           </p>
         </div>
 
-        {/* SEO Services Tabs */}
-        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'}`}>
-          <div className="flex overflow-x-auto scrollbar-hide space-x-2 pb-4 mb-6">
-            {seoServices.map((service, index) => {
-              const Icon = service.icon;
+        {/* Tab section */}
+        <div className={`mb-10 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          {/* Scrollable tab bar */}
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-3 mb-6">
+            {seoServices.map((svc, i) => {
+              const Icon = svc.icon;
               return (
                 <button
-                  key={index}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${activeTab === index ? 'bg-amber-400/20 text-amber-300 border border-amber-400/30' : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-gray-300'}`}
-                  onClick={() => setActiveTab(index)}
+                  key={i}
+                  onClick={() => setActiveTab(i)}
+                  className={`inline-flex flex-shrink-0 items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    activeTab === i
+                      ? 'bg-amber-400/15 text-amber-300 border border-amber-400/30'
+                      : 'bg-white/5 text-gray-400 border border-white/7 hover:bg-white/8 hover:text-gray-300'
+                  }`}
                 >
-                  <div className="flex items-center">
-                    <span className="mr-2"><Icon size={18} /></span>
-                    <span>{service.title}</span>
-                  </div>
+                  <Icon size={14} />
+                  <span className="whitespace-nowrap">{svc.title}</span>
                 </button>
               );
             })}
           </div>
 
-          {/* Content for active tab */}
-          <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-            {seoServices.map((service, index) => {
-              const Icon = service.icon;
+          {/* Active tab content panel */}
+          <div className="rounded-2xl border border-white/7 bg-[#0F0F18] p-6 sm:p-8">
+            {seoServices.map((svc, i) => {
+              const Icon = svc.icon;
               return (
-                <div
-                  key={index}
-                  className={`transition-all duration-500 ${activeTab === index ? 'opacity-100 block' : 'opacity-0 hidden'}`}
-                >
-                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                    <div className="mb-6 md:mb-0 md:max-w-xl">
-                      <h3 className="text-2xl font-semibold text-white mb-4 flex items-center">
-                        <span className="bg-amber-400/20 p-2 rounded-lg mr-3"><Icon size={24} /></span>
-                        {service.title}
+                <div key={i} className={`transition-all duration-500 ${activeTab === i ? 'block opacity-100' : 'hidden opacity-0'}`}>
+                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    {/* Text */}
+                    <div className="flex-1">
+                      <h3 className="flex items-center gap-3 text-xl font-bold text-white mb-3 sm:text-2xl">
+                        <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-amber-400/15 text-amber-400">
+                          <Icon size={20} />
+                        </span>
+                        {svc.title}
                       </h3>
-                      <p className="text-gray-300">{service.description}</p>
+                      <p className="text-gray-400 leading-relaxed">{svc.description}</p>
                     </div>
 
-                    <div className="flex space-x-6">
-                      {service.stats.map((stat, i) => (
-                        <div key={i} className="text-center">
-                          <div className="text-2xl font-bold text-amber-300">{stat.value}</div>
-                          <div className="text-sm text-gray-400">{stat.label}</div>
+                    {/* Stats */}
+                    <div className="flex gap-4 flex-shrink-0 flex-wrap sm:flex-nowrap">
+                      {svc.stats.map((s, j) => (
+                        <div key={j} className="rounded-xl border border-white/7 bg-white/3 p-4 text-center min-w-[100px]">
+                          <div className="text-2xl font-bold text-amber-300">{s.value}</div>
+                          <div className="mt-1 text-xs text-gray-500">{s.label}</div>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom dots */}
+                  <div className="mt-6 flex items-center justify-between border-t border-white/6 pt-5">
+                    <div className="flex items-center gap-2 text-sm text-white">
+                      <Award size={16} className="text-amber-400" />
+                      Our approach is data-driven and results-oriented
+                    </div>
+                    <div className="hidden gap-1.5 sm:flex">
+                      {seoServices.map((_, j) => (
+                        <button key={j}
+                          className={`h-1.5 rounded-full transition-all duration-300 ${activeTab === j ? 'w-6 bg-amber-400' : 'w-1.5 bg-white/20'}`}
+                          onClick={() => setActiveTab(j)}
+                          aria-label={`Service ${j + 1}`}
+                        />
                       ))}
                     </div>
                   </div>
                 </div>
               );
             })}
-
-            <div className="mt-8 pt-6 border-t border-gray-700">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <Award size={20} className="text-amber-400 mr-2" />
-                  <span className="text-white">Our approach is data-driven and results-oriented</span>
-                </div>
-                <div className="hidden md:flex space-x-1">
-                  {seoServices.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${activeTab === index ? 'bg-amber-400 w-6' : 'bg-gray-600'}`}
-                      onClick={() => setActiveTab(index)}
-                      aria-label={`View service ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* SEO Results Box */}
+        {/* Results banner */}
         <div
-          className={`bg-gradient-to-r from-amber-900/30 to-gray-800 rounded-lg p-8 border border-amber-700/20 transition-all duration-1000 ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'}`}
-          style={{ transitionDelay: '300ms' }}
+          className={`rounded-2xl border border-amber-400/15 p-6 sm:p-8 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.08) 0%, #0F0F18 100%)', transitionDelay: '300ms' }}
         >
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-6 md:mb-0">
-              <h3 className="text-xl font-semibold text-white mb-2">Ready to improve your search rankings?</h3>
-              <p className="text-gray-300">Our SEO strategies deliver measurable results that grow your business.</p>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-white sm:text-2xl">
+                Ready to improve your search rankings?
+              </h3>
+              <p className="mt-1 text-gray-400">Our SEO strategies deliver measurable results that grow your business.</p>
             </div>
-            <div className="flex space-x-4">
-              <div className="bg-black/30 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-amber-300">90%</div>
-                <div className="text-sm text-gray-400">Higher Organic Traffic</div>
-              </div>
-              <div className="bg-black/30 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-amber-300">70%</div>
-                <div className="text-sm text-gray-400">Lower Acquisition Cost</div>
-              </div>
-              <div className="bg-black/30 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-amber-300">45%</div>
-                <div className="text-sm text-gray-400">Conversion Increase</div>
-              </div>
+            <div className="flex flex-wrap gap-3">
+              {resultCards.map((r) => (
+                <div key={r.label} className="rounded-xl border border-white/7 bg-black/30 p-4 text-center min-w-[110px]">
+                  <div className="text-2xl font-bold text-amber-300">{r.value}</div>
+                  <div className="mt-1 text-xs text-gray-500">{r.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -208,5 +200,3 @@ function SeoExpertise() {
     </section>
   );
 }
-
-export default SeoExpertise;
