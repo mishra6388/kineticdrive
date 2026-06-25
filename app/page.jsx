@@ -4,11 +4,11 @@ import SeoHead from "@/components/SeoHead";
 import Hero from "@/components/Hero";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import WhatweDo from "@/components/WhatweDo";
-import IndustrygrowthSection from "@/components/IndustrygrowthSection";
+import IndustrygrowthSection from "@/components/industrygrowthsection";
 import WhyChoose from "@/components/WhyChoose";
 import DigitalMarketingServices from "@/components/DigitalMarketingServices";
 import GoogleReview from "@/components/GoogleReview";
-import TechStack from "@/components/TechStack";
+import TechStack from "@/components/Techstack";
 import SeoExpertise from "@/components/Seoexperties";
 import Contact from "@/components/Contact";
 

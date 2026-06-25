@@ -134,7 +134,7 @@ export default function GoogleReviewsCarousel() {
       {/* ── CTA ── */}
       <div className="relative z-10 mt-12 text-center px-4">
         <a
-          href="https://g.co/kgs/your-profile"
+          href="https://www.google.com/maps/place/Kinetic+Drive+Tech+Solutions/@25.4621341,81.8246664,17z/data=!3m1!4b1!4m6!3m5!1s0x399acb380a029203:0x37e5b323d7306967!8m2!3d25.4621341!4d81.8246664!16s%2Fg%2F11xmnts4qf?entry=ttu&g_ep=EgoyMDI2MDYyMi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-xl border border-white/8 bg-white/4 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-amber-400/30 hover:bg-amber-400/6 hover:text-amber-300"
