@@ -21,14 +21,14 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const isAdminPage = pathname?.startsWith("/admin") || pathname?.startsWith("/login");
+  const isNoLayoutPage = pathname?.startsWith("/admin") || pathname?.startsWith("/login") || pathname === "/free-audit";
 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {!isAdminPage && <Navbar />}
+        {!isNoLayoutPage && <Navbar />}
         {children}
-        {!isAdminPage && <Footer />}
+        {!isNoLayoutPage && <Footer />}
       </body>
     </html>
   );

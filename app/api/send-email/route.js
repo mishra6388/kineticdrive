@@ -18,14 +18,14 @@ export async function POST(request) {
 
     const recipients = [
       'mishra.pm443@gmail.com',
-      'kcabdigital@gmail.com', // primary business inbox
+      'garima.komal@gmail.com',
     ];
 
     const subject = 'Website: Free consultation / lead';
     const text = `Name: ${name || 'Not provided'}\nPhone: ${phone}\nWebsite: ${website || 'Not provided'}\nSource: Homepage lead form`;
 
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM, // e.g. 'Leads <leads@yourdomain.com>'
+      from: process.env.RESEND_FROM || 'KineticDrive Leads <info@kineticdrive.in>',
       to: recipients,
       subject,
       text,

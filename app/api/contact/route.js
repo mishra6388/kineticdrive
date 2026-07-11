@@ -36,8 +36,8 @@ Source: Homepage lead capture form
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'KineticDrive <onboarding@resend.dev>',
-        to: ['kcabdigital@gmail.com'],
+        from: 'KineticDrive <info@kineticdrive.in>',
+        to: ['mishra.pm443@gmail.com', 'garima.komal@gmail.com'],
         subject,
         text,
       }),
