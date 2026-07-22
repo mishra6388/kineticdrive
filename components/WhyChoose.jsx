@@ -146,7 +146,7 @@ export default function WhyChoose() {
                   }}
                 >
                   <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl transition-colors duration-300 ${isActive ? "bg-amber-400/20 text-amber-400" : "bg-white/5 text-gray-400 group-hover:text-amber-400"}`}>
-                    <Icon size={20} />
+                    <Icon size={19} />
                   </div>
                   <h3 className={`text-base font-semibold mb-1.5 transition-colors duration-200 ${isActive ? "text-amber-300" : "text-white"}`}>
                     {f.title}
