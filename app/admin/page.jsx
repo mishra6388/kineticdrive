@@ -52,7 +52,7 @@ export default function AdminPage() {
 
   if (loading) return (
     <div className="p-8 flex items-center justify-center min-h-[50vh]">
-      <div className="animate-pulse text-gray-500 font-medium">Loading metrics...</div>
+      <div className="animate-pulse text-gray-600 font-medium">Loading metrics...</div>
     </div>
   );
 
