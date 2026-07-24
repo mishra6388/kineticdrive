@@ -37,9 +37,9 @@ export default function KineticDriveNavbar() {
       href: '/services',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Web Development', href: '/web-development' },
-        { name: 'App Development', href: '/app-development' },
-        { name: 'Digital Marketing', href: '/digital-marketing' }
+        { name: 'Web Development', href: '/web-services' },
+        { name: 'App Development', href: '/app-services' },
+        { name: 'Digital Marketing', href: '/digital-services' }
       ]
     },
     { name: 'Contact', href: '/contact' }

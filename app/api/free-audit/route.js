@@ -50,6 +50,7 @@ export async function POST(request) {
     const recipients = [
       'mishra.pm443@gmail.com',
       'garima.komal@gmail.com',
+      'khushikinetic@gmail.com'
     ];
 
     const subject = 'New Free Audit Request (Landing Page)';
