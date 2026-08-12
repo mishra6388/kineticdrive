@@ -19,9 +19,11 @@
 /* ─── Base ──────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   background: var(--bg-base);
   color: var(--text-primary);
   font-family: 'Inter', 'Geist Sans', Arial, sans-serif;

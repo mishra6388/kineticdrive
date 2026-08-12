@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         {!isNoLayoutPage && <Navbar />}
         {children}
         {!isNoLayoutPage && <Footer />}
+        <WhatsAppButton />
       </body>
     </html>
   );

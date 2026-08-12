@@ -47,7 +47,7 @@ export default function Home() {
       />
 
       {/* Main sections */}
-      {/* <MacbookScroll/> */}
+      {/* <MacbookScroll/>  */}
       <Hero />
       <LeadCaptureSection />
       <WhatweDo />

@@ -20,10 +20,10 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Instagram, href: 'https://www.instagram.com/kineticdrive.in/', label: 'Instagram' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/kinetic-drive-tech-solutions', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'Twitter / X' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Youtube, href: 'https://www.youtube.com/results?search_query=suno+prayagraj', label: 'YouTube' },
 ];
 
 const legalLinks = [
@@ -108,10 +108,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:+917388100750"
+                <a href="tel:+917388100850"
                   className="group flex items-start gap-3 text-sm text-gray-500 transition-colors hover:text-amber-400">
                   <Phone size={15} className="mt-0.5 flex-shrink-0 text-amber-400/70 group-hover:text-amber-400" />
-                  +91 7388100750
+                  +91 7388100850
                 </a>
               </li>
             </ul>

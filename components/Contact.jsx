@@ -7,19 +7,19 @@ const locations = [
     name: 'Prayagraj',
     address:
       '15/12A, First floor, Thornhill Road Dayanand Marg, Ashok Nagar, Prayagraj, India-211001',
-    phone: '+91 9355520030',
+    phone: '+91 7388100850 / +91 7388100750 / +91 7388103019',
     email: 'info@kineticdrive.in',
     hours: 'Mon–Sat: 10 AM – 6 PM',
     embedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114045.3729138432!2d81.8304065!3d25.4500478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acbe25817eacd%3A0x190c675f6c7e7dc3!2sPrayagraj!5e0!3m2!1sen!2sin!4v1715854843044!5m2!1sen!2sin',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.8809326184432!2d81.82466640000001!3d25.4621341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acb380a029203%3A0x37e5b323d7306967!2sKinetic%20Drive%20Tech%20Solutions!5e0!3m2!1sen!2sin!4v1786513144011!5m2!1sen!2sin',
     mapsUrl:
-      'https://www.google.co.in/maps/place/Prayagraj,+Uttar+Pradesh/@25.4500478,81.8304065,17z',
+      'https://www.google.com/maps/place/Kinetic+Drive+Tech+Solutions/@25.4621341,81.8246664,749m/data=!3m2!1e3!4b1!4m6!3m5!1s0x399acb380a029203:0x37e5b323d7306967!8m2!3d25.4621341!4d81.8246664!16s%2Fg%2F11xmnts4qf?hl=en-IN',
   },
   {
     name: 'Lucknow',
     address:
       'First Floor, Royal Plaza, F-101, Golf City, Sector B Ansal API, Lucknow, Uttar Pradesh 226030',
-    phone: '+91 9355520030',
+    phone: '+91 7388100850 / +91 7388100750 / +91 7388103019',
     email: 'info@kineticdrive.in',
     hours: 'Mon–Sat: 10 AM – 6 PM',
     embedUrl:
@@ -39,7 +39,7 @@ const contactInfo = [
     icon: Phone,
     label: 'Phone',
     getValue: (loc) => loc.phone,
-    isLink: (loc) => `tel:${loc.phone}`,
+    isLink: (loc) => `tel:${loc.phone.split(' / ')[0].replace(/\s+/g, '')}`,
   },
   {
     icon: Mail,
@@ -410,7 +410,7 @@ export default function ContactAndLocations() {
             Need immediate assistance?
           </p>
           <a
-            href="tel:+919355520030"
+            href="tel:+917388100850"
             className="relative mt-3 inline-flex items-center gap-3 text-2xl font-extrabold text-amber-300 hover:text-amber-200 transition-colors sm:text-4xl group/phone"
           >
             <span className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-amber-400/10 border border-amber-400/20 group-hover/phone:bg-amber-400/15 transition-all">
@@ -419,7 +419,7 @@ export default function ContactAndLocations() {
                 className="text-amber-400 animate-pulse"
               />
             </span>
-            +91 9355520030
+            +91 7388100850
           </a>
           <p className="relative mt-3 text-sm text-gray-600">
             Available 24/7 for urgent support
