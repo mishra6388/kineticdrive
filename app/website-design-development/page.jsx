@@ -69,7 +69,9 @@ export default function WebsiteDesignDevelopmentPage() {
         
         <FaqSection />
         
-        <ContactSection />
+        <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+          <ContactSection />
+        </Suspense>
         
         <FinalCtaSection />
       </main>
