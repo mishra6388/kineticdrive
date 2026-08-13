@@ -37,26 +37,80 @@ function About() {
     {
       name: "Garima Kushwaha",
       role: "Founder & CEO",
-      bio: "With over 10 years of software development experience, Garima Kushwaha founded Kinetic Drive to create innovative solutions that empower businesses.",
+      bio: "Mechanical Engineering PhD with over 10 years of tech expertise, Dr. Garima leads Kinetic Drive's strategic vision.",
       image: "/images/garimaKD.jpg"
     },
     {
+      name: "Shakti Kushwaha",
+      role: "Chief Marketing Officer (CMO)",
+      bio: "Strategic marketing expert driving brand visibility, client acquisition, and core business growth across all channels.",
+      image: "/images/ShaktikD.jpeg"
+    },
+    {
       name: "Prashant Mishra",
-      role: "CTO",
-      bio: "Prashant Mishra expertise in emerging technologies and leads our development team with a focus on scalable, future-proof architecture.",
+      role: "Chief Technical Officer (CTO)",
+      bio: "Technical leader architecting scalable, cutting-edge software solutions that ensure reliable and secure performance.",
       image: "/images/prashantKD.png"
     },
     {
-      name: "Nidhi Mishra",
-      role: "Lead Designer",
-      bio: "Nidhi intuitive user experiences that balance aesthetics with functionality, ensuring our solutions are both beautiful and usable.",
-      image: "/images/nidhikd.png"
+      name: "Khushi Agarwal",
+      role: "Full Stack Developer",
+      bio: "Versatile developer engineering scalable frontend and backend systems, delivering robust and seamless digital solutions.",
+      image: "/images/KhushikD.png"
     },
     {
       name: "Deeksha Singh",
       role: "Head of Client Success",
-      bio: "Deeksha closely with our clients to understand their needs and ensure our solutions exceed expectations at every stage.",
+      bio: "Client advocate coordinating projects seamlessly to ensure every delivered solution exceeds our business expectations.",
       image: "/images/deekshaKD.png"
+    },
+    {
+      name: "Ravindra Kushwaha",
+      role: "Operations Manager",
+      bio: "Operations expert streamlining daily workflows and team coordination to keep projects highly efficient and on schedule.",
+      image: "/images/RavindraKD.jpeg"
+    },
+    {
+      name: "Rishabh Singh",
+      role: "Social Media Manager",
+      bio: "Digital strategist building dynamic online communities through engaging content and consistent brand communication.",
+      image: "/images/RishabhKD.jpeg"
+    },
+    {
+      name: "Yashi Jaiswal",
+      role: "Performance Marketing Specialist",
+      bio: "Growth specialist managing data-driven advertising campaigns to maximize online visibility and generate quality leads.",
+      image: "/images/YashiKD.jpeg"
+    },
+    {
+      name: "Shaurya Gupta ",
+      role: "Video Editor",
+      bio: "Visual storyteller crafting polished, high-impact video content for digital campaigns to maximize audience engagement.",
+      image: "/images/ShauryaKD.jpeg"
+    },
+    {
+      name: "Abhishek Sahu",
+      role: "Marketing Executive",
+      bio: "Dynamic outreach specialist expanding brand reach through field engagement, promotions, and strategic client relations.",
+      image: "/images/AbhishekKD.jpeg"
+    },
+    {
+      name: "Anuj Sahu",
+      role: "Video Editor",
+      bio: "Creative editor transforming raw footage into engaging visual stories that strengthen brand identity and communication.",
+      image: "/images/AnujKD.jpeg"
+    },
+    {
+      name: "Neha Yadav",
+      role: "Sales Executive",
+      bio: "Dedicated support specialist addressing client inquiries promptly and nurturing relationships to ensure high retention.",
+      image: "/images/NehaKD.jpeg"
+    },
+    {
+      name: "Navyata Kesarwani",
+      role: "Telecaller & Customer Support Executive",
+      bio: "Proactive support professional ensuring seamless client communication, swift inquiry resolution, and strong follow-ups.",
+      image: "/images/NavyataKD.jpeg"
     }
   ];
 
@@ -155,11 +209,11 @@ function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member, index) => (
               <div 
                 key={member.name}
-                className={`bg-gray-800 rounded-lg overflow-hidden transition-all duration-1000 group hover:bg-gray-800/80 ${
+                className={`w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex flex-col bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl group ${
                   isVisible.team ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
@@ -168,16 +222,14 @@ function About() {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 saturate-75 group-hover:saturate-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-                    <p className="text-amber-400">{member.role}</p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
                 </div>
-                <div className="p-4">
-                  <p className="text-gray-300 text-sm">{member.bio}</p>
+                <div className="p-5 relative z-10 flex-grow flex flex-col">
+                  <h3 className="text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors duration-300">{member.name}</h3>
+                  <p className="text-[11px] font-semibold text-amber-500 uppercase tracking-wider mb-3">{member.role}</p>
+                  <p className="text-gray-300 text-xs leading-relaxed flex-grow">{member.bio}</p>
                 </div>
               </div>
             ))}
