@@ -30,7 +30,7 @@ export default function KineticDriveNavbar() {
 
   const navigationItems = [
     { name: 'Home', href: '/' },
-    { name: 'Anchors', href: '/anchors' },
+    // { name: 'Anchors', href: '/anchors' },
     { name: 'About', href: '/about' },
     {
       name: 'Services',
