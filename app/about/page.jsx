@@ -101,7 +101,7 @@ function About() {
       image: "/images/AnujKD.jpeg"
     },
     {
-      name: "Neha Yadav",
+      name: "Neha Tripathi",
       role: "Sales Executive",
       bio: "Dedicated support specialist addressing client inquiries promptly and nurturing relationships to ensure high retention.",
       image: "/images/NehaKD.jpeg"
