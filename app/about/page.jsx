@@ -107,7 +107,7 @@ function About() {
       image: "/images/NehaKD.jpeg"
     },
     {
-      name: "Navyata Kesarwani",
+      name: "Navyata Kesharwani",
       role: "Telecaller & Customer Support Executive",
       bio: "Proactive support professional ensuring seamless client communication, swift inquiry resolution, and strong follow-ups.",
       image: "/images/NavyataKD.jpeg"
