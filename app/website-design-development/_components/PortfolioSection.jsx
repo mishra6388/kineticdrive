@@ -36,12 +36,12 @@ const PortfolioCard = ({ item, idx }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ delay: idx * 0.1, duration: 0.6 }}
-      className={`relative group h-80 rounded-3xl overflow-hidden shadow-2xl shadow-gray-200/50 bg-white ${item.rotate} ${item.yOffset} hover:z-10`}
+      className={`relative group h-80 rounded-3xl overflow-hidden shadow-2xl shadow-amber-500/5 bg-[#13131F] ${item.rotate} ${item.yOffset} hover:z-10`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <div className="absolute inset-0 w-full h-full p-2">
-        <div className="w-full h-full rounded-2xl overflow-hidden relative border border-gray-100 bg-gray-100">
+        <div className="w-full h-full rounded-2xl overflow-hidden relative border border-white/10 bg-[#0F0F18]">
          <motion.img 
   src={`/portfolio/${item.src}`}
   alt={item.alt}
@@ -60,10 +60,10 @@ const PortfolioCard = ({ item, idx }) => {
 
 export default function PortfolioSection() {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden" id="portfolio">
+    <section className="py-24 bg-[#050508] overflow-hidden" id="portfolio">
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Recent Projects</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Recent Projects</h2>
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
           Real websites developed by KineticDrive. Move your cursor over any project to scroll through the full page.
         </p>
       </div>
@@ -77,7 +77,7 @@ export default function PortfolioSection() {
         </div>
 
         <div className="mt-24 text-center">
-          <a href="#contact" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 border border-gray-200 text-gray-900 font-bold px-8 py-4 rounded-xl shadow-sm transition-all hover:shadow-md">
+          <a href="#contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-8 py-4 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 hover:from-amber-600 hover:to-orange-600">
             Explore More Projects
             <ArrowRight className="w-5 h-5" />
           </a>

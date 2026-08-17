@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap, ChevronDown } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function KineticDriveNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,6 +9,7 @@ export default function KineticDriveNavbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [clickedDropdown, setClickedDropdown] = useState(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,13 +38,15 @@ export default function KineticDriveNavbar() {
       href: '/services',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Web Development', href: '/web-services' },
+        { name: 'Web Development', href: '/website-design-development' },
         { name: 'App Development', href: '/app-services' },
-        { name: 'Digital Marketing', href: '/digital-services' }
+        { name: 'Digital Marketing', href: '/digital-services' },
+        { name: 'Google Ad Agency', href: '/google-ad-agency' }
       ]
     },
     { name: 'Contact', href: '/contact' }
   ];
+
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled

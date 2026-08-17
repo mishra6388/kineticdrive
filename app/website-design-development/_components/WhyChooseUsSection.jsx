@@ -16,15 +16,15 @@ const reasons = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden" id="why-choose-us">
+    <section className="py-24 bg-[#13131F] relative overflow-hidden" id="why-choose-us">
       {/* Decorative Blob */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-100 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[120px] opacity-50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">Why KineticDrive</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">The Premium Choice</h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <span className="text-sm font-bold text-amber-500 uppercase tracking-widest">Why KineticDrive</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-2">The Premium Choice</h2>
+          <div className="w-24 h-1.5 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -35,13 +35,13 @@ export default function WhyChooseUsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-white/60 backdrop-blur-lg border border-white p-6 rounded-3xl shadow-xl shadow-gray-200/50 hover:-translate-y-2 transition-transform duration-300"
+              className="bg-[#0F0F18]/80 backdrop-blur-lg border border-white/10 p-6 rounded-3xl shadow-xl shadow-amber-500/5 hover:-translate-y-2 transition-transform duration-300"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-600/30">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-black mb-6 shadow-lg shadow-amber-500/20">
                 {React.cloneElement(reason.icon, { className: "w-6 h-6" })}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{reason.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{reason.desc}</p>
+              <h3 className="text-xl font-bold text-white mb-2">{reason.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">{reason.desc}</p>
             </motion.div>
           ))}
         </div>

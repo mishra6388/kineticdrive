@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const isNoLayoutPage = pathname?.startsWith("/admin") || pathname?.startsWith("/login") || pathname === "/free-audit" || pathname === "/website-design-development" || pathname === "/app-development" || pathname === "/digital-marketing" || pathname === "/google-ad-agency";
+  const isNoLayoutPage = pathname?.startsWith("/admin") || pathname?.startsWith("/login") || pathname === "/free-audit" ||   pathname === "/app-development" || pathname === "/digital-marketing" ;
 
   return (
     <html lang="en">

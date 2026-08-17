@@ -210,7 +210,7 @@ const handleHeroSubmit = async (e) => {
     <div className="bg-[#050508] text-white min-h-screen font-sans selection:bg-amber-500 selection:text-black">
       
       {/* Local Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800/50">
+      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 h-16 sm:h-20 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg p-1">
@@ -232,7 +232,7 @@ const handleHeroSubmit = async (e) => {
             Call Us: +91 7388100850
           </a>
         </div>
-      </header>
+      </header> */}
 
       {/* 1. HERO SECTION WITH COMPACT FORM */}
       <section className="relative pt-36 pb-24 px-6 overflow-hidden border-b border-white/5">
@@ -325,9 +325,6 @@ const handleHeroSubmit = async (e) => {
                         className="w-full bg-[#13131F] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500/50"
                       >
                         <option value="Google Ads">Google Ads</option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="App Development">App Development</option>
                       </select>
                     </div>
                     <button 
@@ -531,9 +528,6 @@ const handleHeroSubmit = async (e) => {
                         className="w-full bg-[#13131F] border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-amber-500/50"
                       >
                         <option value="Google Ads">Google Ads</option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="App Development">App Development</option>
                       </select>
                     </div>
 

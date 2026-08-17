@@ -20,18 +20,18 @@ export default function FloatingActions({ phoneNumber = "7388100850", whatsappMe
           <MessageCircle className="w-8 h-8 relative z-10" />
           
           {/* Tooltip */}
-          <span className="absolute right-full mr-4 bg-white text-gray-900 text-sm font-semibold px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-full mr-4 bg-[#13131F] text-white border border-white/10 text-sm font-semibold px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             Chat on WhatsApp
           </span>
         </a>
       </div>
 
       {/* Mobile Sticky Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)] p-3">
+      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#0F0F18]/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.5)] p-3">
         <div className="flex items-center gap-3 max-w-sm mx-auto">
           <a
             href={callUrl}
-            className="flex-1 flex items-center justify-center gap-2 bg-gray-900 text-white font-bold py-3.5 rounded-xl shadow-lg active:scale-95 transition-transform"
+            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold py-3.5 rounded-xl shadow-lg shadow-amber-500/20 active:scale-95 transition-transform"
           >
             <Phone className="w-5 h-5" />
             <span>Call Now</span>

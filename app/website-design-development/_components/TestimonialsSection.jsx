@@ -38,18 +38,18 @@ export default function TestimonialsSection() {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-24 bg-white overflow-hidden relative" id="testimonials">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[100px] opacity-60 pointer-events-none" />
+    <section className="py-24 bg-[#050508] overflow-hidden relative" id="testimonials">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px] opacity-60 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">Testimonials</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">What Our Clients Say</h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <span className="text-sm font-bold text-amber-500 uppercase tracking-widest">Testimonials</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-2">What Our Clients Say</h2>
+          <div className="w-24 h-1.5 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="flex justify-center mb-8 text-blue-100">
+          <div className="flex justify-center mb-8 text-white/10">
             <Quote className="w-16 h-16" />
           </div>
 
@@ -69,13 +69,13 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 
-                <p className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed mb-8">
+                <p className="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed mb-8">
                   "{testimonials[current].text}"
                 </p>
                 
                 <div>
-                  <h4 className="text-lg font-bold text-gray-900">{testimonials[current].name}</h4>
-                  <p className="text-sm text-gray-500">{testimonials[current].company}</p>
+                  <h4 className="text-lg font-bold text-white">{testimonials[current].name}</h4>
+                  <p className="text-sm text-gray-400">{testimonials[current].company}</p>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
 
           {/* Controls */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
+            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-colors">
               <ChevronLeft className="w-5 h-5" />
             </button>
             <div className="flex gap-2">
@@ -91,11 +91,11 @@ export default function TestimonialsSection() {
                 <button 
                   key={idx}
                   onClick={() => setCurrent(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${current === idx ? 'bg-blue-600 w-8' : 'bg-gray-300'}`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${current === idx ? 'bg-amber-500 w-8' : 'bg-white/20'}`}
                 />
               ))}
             </div>
-            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
+            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-colors">
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>

@@ -14,17 +14,17 @@ const steps = [
 
 export default function OurProcessSection() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-[#050508] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">How We Work</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">Our 6-Step Process</h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <span className="text-sm font-bold text-amber-500 uppercase tracking-widest">How We Work</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-2">Our 6-Step Process</h2>
+          <div className="w-24 h-1.5 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         <div className="relative">
           {/* Connecting Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -translate-y-1/2 rounded-full" />
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 rounded-full" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative z-10">
             {steps.map((step, idx) => (
@@ -37,17 +37,17 @@ export default function OurProcessSection() {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Number Badge */}
-                <div className="absolute -top-4 -right-2 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-20">
+                <div className="absolute -top-4 -right-2 w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 text-black rounded-full flex items-center justify-center font-bold text-sm shadow-lg z-20">
                   {step.num}
                 </div>
                 
                 {/* Icon Circle */}
-                <div className="w-20 h-20 bg-white border-4 border-gray-50 rounded-full flex items-center justify-center text-blue-600 mb-6 shadow-xl shadow-gray-200/50 group-hover:border-blue-100 group-hover:scale-110 transition-all duration-300 relative z-10">
+                <div className="w-20 h-20 bg-[#0F0F18] border-4 border-[#13131F] rounded-full flex items-center justify-center text-amber-500 mb-6 shadow-xl shadow-amber-500/5 group-hover:border-amber-500/30 group-hover:scale-110 transition-all duration-300 relative z-10">
                   {React.cloneElement(step.icon, { className: "w-8 h-8" })}
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed px-4">{step.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed px-4">{step.desc}</p>
               </motion.div>
             ))}
           </div>

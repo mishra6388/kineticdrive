@@ -11,13 +11,13 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-12 bg-white border-y border-gray-100">
+    <section className="py-12 bg-transparent border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           
           <div className="w-full md:w-1/3">
             <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Trusted By</p>
-            <h3 className="text-2xl font-bold text-gray-900">
+            <h3 className="text-2xl font-bold text-white">
               Startups, Businesses & Local Brands
             </h3>
           </div>
@@ -32,7 +32,7 @@ export default function TrustSection() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className="text-center md:text-left"
               >
-                <div className="text-3xl md:text-4xl font-black text-blue-600 mb-1">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-black text-amber-500 mb-1">{stat.value}</div>
                 <div className="text-sm font-semibold text-gray-500">{stat.label}</div>
               </motion.div>
             ))}

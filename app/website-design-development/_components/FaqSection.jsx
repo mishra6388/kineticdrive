@@ -20,12 +20,12 @@ export default function FaqSection() {
   const [openIdx, setOpenIdx] = useState(0);
 
   return (
-    <section className="py-24 bg-gray-50" id="faqs">
+    <section className="py-24 bg-[#13131F]" id="faqs">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">FAQ</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">Frequently Asked Questions</h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <span className="text-sm font-bold text-amber-500 uppercase tracking-widest">FAQ</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-2">Frequently Asked Questions</h2>
+          <div className="w-24 h-1.5 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         <div className="space-y-4">
@@ -38,24 +38,24 @@ export default function FaqSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white border-blue-200 shadow-lg shadow-blue-900/5' : 'bg-white border-gray-200 hover:border-blue-300'}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-[#0F0F18] border-amber-500/50 shadow-lg shadow-amber-500/5' : 'bg-[#0F0F18] border-white/10 hover:border-amber-500/30'}`}
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? -1 : idx)}
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
-                  <span className={`font-bold pr-4 ${isOpen ? 'text-blue-600' : 'text-gray-900'}`}>
+                  <span className={`font-bold pr-4 ${isOpen ? 'text-amber-500' : 'text-white'}`}>
                     {faq.q}
                   </span>
                   {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-blue-600 shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-amber-500 shrink-0" />
                   ) : (
                     <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />
                   )}
                 </button>
                 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed text-sm md:text-base border-t border-gray-100 pt-4">
+                  <div className="px-6 pb-6 text-gray-400 leading-relaxed text-sm md:text-base border-t border-white/10 pt-4">
                     {faq.a}
                   </div>
                 )}

@@ -1,0 +1,29 @@
+name: Keep Supabase Project Active
+
+# Runs every 5 days so the Supabase Free Tier project never hits
+# the 7-day inactivity auto-pause threshold. Also runnable manually.
+on:
+  schedule:
+    - cron: "0 6 */5 * *"   # 6:00 AM UTC, every 5 days
+  workflow_dispatch:          # lets you trigger it manually from the Actions tab
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase leads table
+        run: |
+          response=$(curl -s -o /tmp/response.json -w "%{http_code}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/leads?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+
+          echo "HTTP status: $response"
+          cat /tmp/response.json
+
+          if [ "$response" -ge 200 ] && [ "$response" -lt 300 ]; then
+            echo "✅ Supabase project pinged successfully — activity registered."
+          else
+            echo "❌ Ping failed with status $response"
+            exit 1
+          fi

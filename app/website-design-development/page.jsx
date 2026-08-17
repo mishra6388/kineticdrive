@@ -12,7 +12,7 @@ import FaqSection from './_components/FaqSection';
 import ContactSection from './_components/ContactSection';
 import FinalCtaSection from './_components/FinalCtaSection';
 
-import FloatingActions from './_components/FloatingActions';
+
 
 export const metadata = {
   title: 'Professional Website Development Services | KineticDrive',
@@ -22,9 +22,9 @@ export const metadata = {
 
 export default function WebsiteDesignDevelopmentPage() {
   return (
-    <div className="min-h-screen bg-gray-10 text-gray-900 selection:bg-blue-600 selection:text-white scroll-smooth font-sans">
+    <div className="min-h-screen bg-[#050508] text-white selection:bg-amber-500 selection:text-black scroll-smooth font-sans">
       {/* Local Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800/50">
+      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-gray-800/50">
         <div className="max-w-6xl mx-auto px-6 h-16 sm:h-20 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg p-1">
@@ -46,7 +46,7 @@ export default function WebsiteDesignDevelopmentPage() {
             Call Us: +91 7388100850
           </a>
         </div>
-      </header>
+      </header> */}
       
       <main>
         <Suspense fallback={<div className="h-screen bg-gray-50" />}>
@@ -77,7 +77,7 @@ export default function WebsiteDesignDevelopmentPage() {
       </main>
 
       
-      <FloatingActions />
+      
     </div>
   );
 }

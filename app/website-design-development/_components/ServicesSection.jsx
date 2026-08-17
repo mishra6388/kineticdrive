@@ -19,12 +19,12 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 bg-white" id="services">
+    <section className="py-24 bg-[#050508]" id="services">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold text-blue-600 uppercase tracking-widest">Our Expertise</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-2">Website Development Services</h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <span className="text-sm font-bold text-amber-500 uppercase tracking-widest">Our Expertise</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-2">Website Development Services</h2>
+          <div className="w-24 h-1.5 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -35,13 +35,13 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.4 }}
-              className="bg-gray-50 border border-gray-100 hover:border-blue-200 p-6 rounded-2xl group transition-all hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 cursor-default"
+              className="bg-[#0F0F18] border border-white/10 hover:border-amber-500/50 p-6 rounded-2xl group transition-all hover:bg-[#13131F] hover:shadow-xl hover:shadow-amber-500/5 cursor-default"
             >
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 transition-transform group-hover:bg-blue-600 group-hover:text-white">
+              <div className="w-12 h-12 bg-[#13131F] rounded-xl shadow-sm border border-white/10 flex items-center justify-center text-amber-500 mb-4 group-hover:scale-110 transition-transform group-hover:bg-amber-500 group-hover:text-black">
                 {React.cloneElement(srv.icon, { className: "w-6 h-6" })}
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{srv.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{srv.desc}</p>
+              <h3 className="text-lg font-bold text-white mb-2">{srv.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">{srv.desc}</p>
             </motion.div>
           ))}
         </div>
