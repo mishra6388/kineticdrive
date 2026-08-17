@@ -235,7 +235,7 @@ const handleHeroSubmit = async (e) => {
       </header> */}
 
       {/* 1. HERO SECTION WITH COMPACT FORM */}
-      <section className="relative pt-36 pb-24 px-6 overflow-hidden border-b border-white/5">
+      <section className="relative pt-20 lg:pt-24 pb-24 px-6 overflow-hidden border-b border-white/5">
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-12 right-12 w-96 h-96 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
         
@@ -603,45 +603,6 @@ const handleHeroSubmit = async (e) => {
         </div>
       </section>
 
-      {/* STICKY FOOTER BAR (Mobile) */}
-      <div className="fixed bottom-0 left-0 w-full z-40 block md:hidden">
-        <div className="bg-[#0F0F18]/95 border-t border-white/10 backdrop-blur-md px-4 py-3 shadow-2xl">
-          <div className="grid grid-cols-2 gap-3">
-            <a 
-              href="tel:+917388100850"
-              className="bg-amber-500 hover:bg-amber-600 text-black font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.122-4.1-6.924-6.924l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-              <span>Call Us</span>
-            </a>
-            <button 
-              onClick={() => handleWhatsAppChat('Sticky Mobile Bar')}
-              className="bg-green-600 hover:bg-green-700 text-white font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.638 1.97 14.162.945 11.536.945c-5.438 0-9.863 4.37-9.866 9.801-.001 1.749.467 3.456 1.354 4.975l-.947 3.464 3.57-.931zm11.367-6.793c-.302-.152-1.791-.883-2.073-.984-.282-.102-.487-.152-.691.152-.204.304-.791.984-.969 1.186-.178.203-.356.228-.658.076-.302-.152-1.275-.469-2.429-1.498-.898-.801-1.503-1.792-1.68-2.096-.177-.304-.019-.468.132-.619.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.101-.201.05-.378-.025-.53-.075-.152-.691-1.667-.947-2.28-.249-.597-.502-.516-.691-.525l-.59-.009c-.204 0-.537.076-.819.379-.282.304-1.077 1.052-1.077 2.566s1.1 2.985 1.253 3.187c.152.203 2.164 3.298 5.24 4.629.731.317 1.302.507 1.748.649.736.233 1.4.2 1.927.122.587-.087 1.791-.733 2.043-1.442.252-.708.252-1.314.177-1.442-.075-.128-.282-.203-.585-.355z"/>
-              </svg>
-              <span>WhatsApp</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* FLOATING WHATSAPP BUTTON (Desktop) */}
-      <button 
-        onClick={() => handleWhatsAppChat('Desktop Floating Button')}
-        className="hidden md:flex fixed bottom-6 right-6 z-50 items-center justify-center bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer group"
-        aria-label="Chat on WhatsApp"
-      >
-        <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.638 1.97 14.162.945 11.536.945c-5.438 0-9.863 4.37-9.866 9.801-.001 1.749.467 3.456 1.354 4.975l-.947 3.464 3.57-.931zm11.367-6.793c-.302-.152-1.791-.883-2.073-.984-.282-.102-.487-.152-.691.152-.204.304-.791.984-.969 1.186-.178.203-.356.228-.658.076-.302-.152-1.275-.469-2.429-1.498-.898-.801-1.503-1.792-1.68-2.096-.177-.304-.019-.468.132-.619.136-.136.302-.352.453-.528.151-.176.201-.302.302-.503.101-.201.05-.378-.025-.53-.075-.152-.691-1.667-.947-2.28-.249-.597-.502-.516-.691-.525l-.59-.009c-.204 0-.537.076-.819.379-.282.304-1.077 1.052-1.077 2.566s1.1 2.985 1.253 3.187c.152.203 2.164 3.298 5.24 4.629.731.317 1.302.507 1.748.649.736.233 1.4.2 1.927.122.587-.087 1.791-.733 2.043-1.442.252-.708.252-1.314.177-1.442-.075-.128-.282-.203-.585-.355z"/>
-        </svg>
-        <span className="absolute right-full mr-3 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-xl border border-gray-800 pointer-events-none">
-          Chat on WhatsApp
-        </span>
-      </button>
     </div>
   );
 }
