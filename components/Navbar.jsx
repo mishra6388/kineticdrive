@@ -41,7 +41,8 @@ export default function KineticDriveNavbar() {
         { name: 'Web Development', href: '/website-design-development' },
         { name: 'App Development', href: '/app-services' },
         { name: 'Digital Marketing', href: '/digital-services' },
-        { name: 'Google Ad Agency', href: '/google-ad-agency' }
+        { name: 'Google Ad Agency', href: '/google-ad-agency' },
+        { name: 'Facebook Ads Agency', href: '/facebook-ads-agency' }
       ]
     },
     { name: 'Contact', href: '/contact' }
