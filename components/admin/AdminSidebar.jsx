@@ -20,7 +20,7 @@ import { supabase } from "@/lib/supabase";
 const navigation = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
     { name: "Leads", href: "/admin/leads", icon: Inbox },
-    { name: "Influencers", href: "/admin/influencers", icon: UsersRound },
+    // { name: "Influencers", href: "/admin/influencers", icon: UsersRound },
     { name: "Anchors", href: "/admin/anchors", icon: Users },
     { name: "Bookings", href: "/admin/anchors", icon: CalendarCheck, note: "Managed via Anchors" }, // For now using the existing flow
     { name: "Settings", href: "/admin/settings", icon: Settings },
