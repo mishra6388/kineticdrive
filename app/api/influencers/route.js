@@ -53,7 +53,9 @@ export async function POST(request) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const recipients = [
           'mishra.pm443@gmail.com',
-          // 'garima.komal@gmail.com',
+          'garima.komal@gmail.com',
+          'khushikinetic@gmail.com',
+          
         ];
 
         const subject = 'New Influencer Registration — KineticDrive';

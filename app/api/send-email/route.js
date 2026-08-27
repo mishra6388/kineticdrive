@@ -19,6 +19,7 @@ export async function POST(request) {
     const recipients = [
       'mishra.pm443@gmail.com',
       'garima.komal@gmail.com',
+      'khushikinetic@gmail.com'
     ];
 
     const subject = 'Website: Free consultation / lead';

@@ -201,87 +201,155 @@ export default function AdminInfluencersPage() {
             </p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-white/5 text-xs font-bold uppercase tracking-widest text-gray-400 bg-white/[0.01]">
-                  <th className="px-6 py-4">Name</th>
-                  <th className="px-6 py-4">Phone</th>
-                  <th className="px-6 py-4">Niche</th>
-                  <th className="px-6 py-4">Instagram</th>
-                  <th className="px-6 py-4">YouTube</th>
-                  <th className="px-6 py-4">YT Subs</th>
-                  <th className="px-6 py-4">Facebook</th>
-                  <th className="px-6 py-4">Status</th>
-                  <th className="px-6 py-4">Registered</th>
-                  <th className="px-6 py-4 text-right">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5 text-sm text-gray-300">
-                {filtered.map((inf) => {
-                  const st = statusConfig[inf.status] || statusConfig.new;
-                  return (
-                    <tr key={inf.id} className="hover:bg-white/[0.02] transition">
-                      <td className="px-6 py-4 font-bold text-white">{inf.name}</td>
-                      <td className="px-6 py-4 text-xs">{inf.phone}</td>
-                      <td className="px-6 py-4">
-                        <span className="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                          {inf.niche}
+          <div className="w-full">
+            {/* Desktop Table Layout */}
+            <div className="hidden lg:block overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/5 text-xs font-bold uppercase tracking-widest text-gray-400 bg-white/[0.01]">
+                    <th className="px-6 py-4">Name</th>
+                    <th className="px-6 py-4">Phone</th>
+                    <th className="px-6 py-4">Niche</th>
+                    <th className="px-6 py-4">Instagram</th>
+                    <th className="px-6 py-4">YouTube</th>
+                    <th className="px-6 py-4">YT Subs</th>
+                    <th className="px-6 py-4">Facebook</th>
+                    <th className="px-6 py-4">Status</th>
+                    <th className="px-6 py-4">Registered</th>
+                    <th className="px-6 py-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-sm text-gray-300">
+                  {filtered.map((inf) => {
+                    const st = statusConfig[inf.status] || statusConfig.new;
+                    const formatNiche = Array.isArray(inf.niche) ? inf.niche.join(', ') : inf.niche;
+                    return (
+                      <tr key={inf.id} className="hover:bg-white/[0.02] transition">
+                        <td className="px-6 py-4 font-bold text-white">{inf.name}</td>
+                        <td className="px-6 py-4 text-xs">{inf.phone}</td>
+                        <td className="px-6 py-4">
+                          <span className="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
+                            {formatNiche}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">
+                          <a href={inf.instagram_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-pink-400 hover:underline">
+                            Instagram <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </td>
+                        <td className="px-6 py-4">
+                          <a href={inf.youtube_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-red-400 hover:underline">
+                            YouTube <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/10 text-red-300 border border-red-500/20">
+                            {inf.youtube_followers || '—'}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">
+                          <a href={inf.facebook_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline">
+                            Facebook <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full border ${st.cls}`}>
+                            {st.label}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-xs text-gray-500">
+                          {new Date(inf.created_at).toLocaleDateString('en-IN', {
+                            day: '2-digit', month: 'short', year: 'numeric',
+                          })}
+                        </td>
+                        <td className="px-6 py-4 text-right">
+                          <div className="inline-flex gap-2">
+                            <button
+                              onClick={() => handleOpen(inf)}
+                              className="p-2 bg-white/5 border border-white/5 rounded-lg hover:border-yellow-500/50 hover:text-yellow-500 transition"
+                              title="View Details"
+                            >
+                              <Eye className="h-4 w-4" />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(inf.id)}
+                              className="p-2 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg hover:bg-red-500 hover:text-white transition"
+                              title="Delete"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Card Layout */}
+            <div className="lg:hidden flex flex-col gap-4 p-4">
+              {filtered.map((inf) => {
+                const st = statusConfig[inf.status] || statusConfig.new;
+                const formatNiche = Array.isArray(inf.niche) ? inf.niche.join(', ') : inf.niche;
+                return (
+                  <div key={inf.id} className="bg-[#121212] border border-white/5 rounded-xl p-5 flex flex-col gap-4 relative">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="font-bold text-white text-lg">{inf.name}</h3>
+                        <p className="text-xs text-gray-400 mt-1">{inf.phone}</p>
+                      </div>
+                      <span className={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full border ${st.cls}`}>
+                        {st.label}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        {formatNiche}
+                      </span>
+                      {inf.youtube_followers && (
+                        <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold rounded-full bg-red-500/10 text-red-300 border border-red-500/20">
+                          {inf.youtube_followers} Subs
                         </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        <a href={inf.instagram_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-pink-400 hover:underline">
-                          Instagram <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </td>
-                      <td className="px-6 py-4">
-                        <a href={inf.youtube_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-red-400 hover:underline">
-                          YouTube <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </td>
-                      <td className="px-6 py-4">
-                        <span className="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-red-500/10 text-red-300 border border-red-500/20">
-                          {inf.youtube_followers || '—'}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4">
-                        <a href={inf.facebook_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:underline">
-                          Facebook <ExternalLink className="w-3 h-3" />
-                        </a>
-                      </td>
-                      <td className="px-6 py-4">
-                        <span className={`inline-block px-2.5 py-0.5 text-xs font-bold rounded-full border ${st.cls}`}>
-                          {st.label}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-xs text-gray-500">
+                      )}
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 mt-2">
+                      <a href={inf.instagram_url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 text-xs text-pink-400 hover:bg-pink-400/10 py-2 rounded-lg border border-white/5">
+                        Instagram <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a href={inf.youtube_url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 text-xs text-red-400 hover:bg-red-400/10 py-2 rounded-lg border border-white/5">
+                        YouTube <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-1">
+                      <p className="text-xs text-gray-500">
                         {new Date(inf.created_at).toLocaleDateString('en-IN', {
                           day: '2-digit', month: 'short', year: 'numeric',
                         })}
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="inline-flex gap-2">
-                          <button
-                            onClick={() => handleOpen(inf)}
-                            className="p-2 bg-white/5 border border-white/5 rounded-lg hover:border-yellow-500/50 hover:text-yellow-500 transition"
-                            title="View Details"
-                          >
-                            <Eye className="h-4 w-4" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(inf.id)}
-                            className="p-2 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg hover:bg-red-500 hover:text-white transition"
-                            title="Delete"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleOpen(inf)}
+                          className="px-3 py-1.5 bg-white/5 border border-white/5 rounded-lg hover:border-yellow-500/50 hover:text-yellow-500 transition text-xs font-bold"
+                        >
+                          Details
+                        </button>
+                        <button
+                          onClick={() => handleDelete(inf.id)}
+                          className="p-1.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg hover:bg-red-500 hover:text-white transition"
+                          title="Delete"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>
@@ -337,9 +405,21 @@ export default function AdminInfluencersPage() {
                     </div>
                     <div>
                       <p className="text-gray-500 font-bold uppercase tracking-wider">Niche</p>
-                      <span className="inline-block px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 mt-1">
-                        {selected.niche}
-                      </span>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {(() => {
+                          let sn = [];
+                          if (Array.isArray(selected.niche)) sn = selected.niche;
+                          else if (typeof selected.niche === 'string') {
+                            try { sn = selected.niche.startsWith('[') ? JSON.parse(selected.niche) : [selected.niche]; }
+                            catch { sn = [selected.niche]; }
+                          }
+                          return sn.map((n, i) => (
+                            <span key={i} className="inline-block px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                              {n}
+                            </span>
+                          ));
+                        })()}
+                      </div>
                     </div>
                   </div>
                 </div>

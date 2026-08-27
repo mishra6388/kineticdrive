@@ -45,6 +45,7 @@ export default function KineticDriveNavbar() {
         { name: 'Facebook Ads Agency', href: '/facebook-ads-agency' }
       ]
     },
+    { name: 'Influencers', href: '/influencers' },
     { name: 'Contact', href: '/contact' }
   ];
 

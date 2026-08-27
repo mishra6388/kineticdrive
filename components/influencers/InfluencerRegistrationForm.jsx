@@ -6,14 +6,15 @@ import Link from 'next/link';
 
 const NICHES = [
   'Fashion', 'Beauty', 'Fitness', 'Travel', 'Food', 'Technology',
-  'Education', 'Finance', 'Lifestyle', 'Gaming', 'Entertainment', 'Business', 'Other',
+  'Education', 'Finance', 'Lifestyle', 'Gaming', 'Entertainment', 'Business', 'News and politics', 'Other',
 ];
 
 const initialForm = {
   name: '',
   phone: '',
   address: '',
-  niche: '',
+  niche: [],
+  other_niche: '',
   facebook_url: '',
   instagram_url: '',
   youtube_url: '',
@@ -46,7 +47,11 @@ export default function InfluencerRegistrationForm() {
     if (!form.phone.trim()) errs.phone = 'Phone number is required';
     else if (!isValidPhone(form.phone)) errs.phone = 'Enter a valid phone number';
     if (!form.address.trim()) errs.address = 'Address is required';
-    if (!form.niche) errs.niche = 'Please select a niche';
+    if (!form.niche || form.niche.length === 0) {
+      errs.niche = 'Please select a niche';
+    } else if (form.niche.includes('Other') && !form.other_niche.trim()) {
+      errs.other_niche = 'Please specify your niche';
+    }
     if (!form.facebook_url.trim()) errs.facebook_url = 'Facebook link is required';
     else if (!isValidUrl(form.facebook_url)) errs.facebook_url = 'Enter a valid URL';
     if (!form.instagram_url.trim()) errs.instagram_url = 'Instagram link is required';
@@ -233,21 +238,56 @@ export default function InfluencerRegistrationForm() {
 
               {/* Niche */}
               <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--text-secondary)' }}>
+                <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text-secondary)' }}>
                   Niche <span className="text-red-500">*</span>
                 </label>
-                <select
-                  value={form.niche}
-                  onChange={(e) => handleChange('niche', e.target.value)}
-                  className={inputCls('niche')}
-                  style={{ ...inputStyle, borderColor: errors.niche ? 'rgba(239,68,68,0.6)' : 'var(--border)' }}
-                >
-                  <option value="" disabled>Select your niche</option>
-                  {NICHES.map((n) => (
-                    <option key={n} value={n} className="bg-[#13131F] text-white">{n}</option>
-                  ))}
-                </select>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {NICHES.map((n) => {
+                    const isSelected = form.niche.includes(n);
+                    return (
+                      <button
+                        type="button"
+                        key={n}
+                        onClick={() => {
+                          const newNiches = isSelected
+                            ? form.niche.filter(item => item !== n)
+                            : [...form.niche, n];
+                          handleChange('niche', newNiches);
+                        }}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+                          isSelected 
+                            ? 'bg-amber-500/20 text-amber-500 border-amber-500' 
+                            : 'bg-transparent text-gray-400 border-gray-700 hover:border-gray-500'
+                        }`}
+                      >
+                        {n}
+                      </button>
+                    );
+                  })}
+                </div>
                 {errors.niche && <p className="text-xs text-red-400 mt-1">{errors.niche}</p>}
+
+                {/* Other Niche Input */}
+                <AnimatePresence>
+                  {form.niche.includes('Other') && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-3 overflow-hidden"
+                    >
+                      <input
+                        type="text"
+                        value={form.other_niche}
+                        onChange={(e) => handleChange('other_niche', e.target.value)}
+                        className={inputCls('other_niche')}
+                        style={{ ...inputStyle, borderColor: errors.other_niche ? 'rgba(239,68,68,0.6)' : 'var(--border)' }}
+                        placeholder="Please specify your niche"
+                      />
+                      {errors.other_niche && <p className="text-xs text-red-400 mt-1">{errors.other_niche}</p>}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Facebook */}
