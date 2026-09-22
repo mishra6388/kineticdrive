@@ -17,14 +17,20 @@ export default function KineticDriveHero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#050508]">
 
-      {/* Background image with overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(5,5,8,0.92), rgba(5,5,8,0.75), rgba(5,5,8,0.55)), url('/Hero.png')",
-        }}
-      />
+      {/* Founder image on the right (Desktop/Tablet) */}
+      <div className={`absolute right-0 top-0 hidden h-full w-[50%] md:block lg:w-[48%] transition-opacity duration-1000 delay-300 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+        <img
+          src="/images/garima-hero-KD.png"
+          alt="Founder of KineticDrive"
+          className="absolute inset-0 h-full w-full object-cover object-[60%_center]"
+          style={{ 
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 25%)', 
+            maskImage: 'linear-gradient(to right, transparent 0%, black 25%)' 
+          }}
+        />
+        {/* Subtle left blend so the container's hard edge isn't visible */}
+        <div className="absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-[#050508] to-transparent pointer-events-none" />
+      </div>
 
       {/* Radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.10),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(245,158,11,0.07),transparent_14%)]" />
@@ -45,7 +51,7 @@ export default function KineticDriveHero() {
 
       {/* ── Content ── */}
       <main className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-screen flex-col items-center justify-center pb-24 pt-28 text-center lg:items-start lg:text-left lg:pt-36">
+        <div className="flex min-h-screen w-full flex-col items-center justify-center pb-24 pt-28 text-center md:w-[55%] md:items-start md:text-left lg:w-[55%] lg:pt-36">
 
           {/* Eyebrow pill */}
           <div
@@ -103,7 +109,7 @@ export default function KineticDriveHero() {
 
           {/* Tag pills */}
           <div
-            className={`mt-8 flex flex-wrap justify-center gap-2 lg:justify-start transition-all duration-1000 delay-800 ${
+            className={`mt-8 flex flex-wrap justify-center gap-2 md:justify-start transition-all duration-1000 delay-800 ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -115,6 +121,19 @@ export default function KineticDriveHero() {
                 {tag}
               </span>
             ))}
+          </div>
+
+          {/* Founder image (Mobile) */}
+          <div
+            className={`relative mx-auto mt-10 h-[360px] w-[280px] overflow-hidden rounded-2xl md:hidden transition-all duration-1000 delay-1000 ${
+              visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+          >
+            <img
+              src="/images/garima-hero-KD.png"
+              alt="Founder of KineticDrive"
+              className="h-full w-full object-cover object-top"
+            />
           </div>
         </div>
       </main>
